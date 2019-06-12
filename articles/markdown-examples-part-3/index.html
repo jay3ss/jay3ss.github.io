@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Markdown Examples Part 3 - Lab137</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/img/favicon.ico" rel="icon">
+
+<link rel="canonical" href="/articles/markdown-examples-part-3/">
+
+        <meta name="author" content="Jay Ess" />
+        <meta name="keywords" content="markdown,pygments" />
+        <meta name="description" content="Code blocks are preceeded by an indent, three : symbols and the name of the language. All of the following code will be highlighted while the text is indented. def do_twice(func): def wrapper_do_twice(*args, **kwargs): return func(*args, **kwargs).lower() return wrapper_do_twice @do_twice def say_whee(some_text): print(some_text) x = &#39;Whee …" />
+
+        <meta property="og:site_name" content="Lab137" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Markdown Examples Part 3"/>
+        <meta property="og:url" content="/articles/markdown-examples-part-3/"/>
+        <meta property="og:description" content="Code blocks are preceeded by an indent, three : symbols and the name of the language. All of the following code will be highlighted while the text is indented. def do_twice(func): def wrapper_do_twice(*args, **kwargs): return func(*args, **kwargs).lower() return wrapper_do_twice @do_twice def say_whee(some_text): print(some_text) x = &#39;Whee …"/>
+        <meta property="article:published_time" content="2019-01-04" />
+            <meta property="article:section" content="articles" />
+            <meta property="article:tag" content="markdown" />
+            <meta property="article:tag" content="pygments" />
+            <meta property="article:author" content="Jay Ess" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.cyborg.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/css/custom.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Lab137            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/pages/about/">
+                             About
+                          </a></li>
+                        <li class="active">
+                            <a href="/category/articles">Articles</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/articles/markdown-examples-part-3/"
+                       rel="bookmark"
+                       title="Permalink to Markdown Examples Part 3">
+                        Markdown Examples Part 3
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <p>Code blocks are preceeded by an indent, three : symbols and the name of the language.
+All of the following code will be highlighted while the text is indented.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">wrapper_do_twice</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">wrapper_do_twice</span>
+
+<span class="nd">@do_twice</span>
+<span class="k">def</span> <span class="nf">say_whee</span><span class="p">(</span><span class="n">some_text</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">some_text</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Whee!&#39;</span>
+<span class="n">say_whee</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<p>and now we'll see how C++ looks</p>
+<div class="highlight"><pre><span></span><span class="cp">#ifndef _LIST_INTERFACE_H_</span>
+<span class="cp">#define _LIST_INTERFACE_H_</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">ListInterface</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="cm">/** Destructor */</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">ListInterface</span><span class="p">(){};</span>
+
+    <span class="cm">/** Sees if the list is empty</span>
+<span class="cm">    @return True if the list is empty, otherwise false. */</span>
+    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="cm">/** Get the number of entries in the list.</span>
+<span class="cm">    @return The integer number of entries in the list. */</span>
+    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">length</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="cm">/** Insert an entry at a given position in the list.</span>
+<span class="cm">    @post A new entry will be in the list in the given position if</span>
+<span class="cm">        1 &lt;= position &lt;= length(). All entries after the insertion point will</span>
+<span class="cm">        be moved back by one.</span>
+<span class="cm">    @param position The position that the new entry will have.</span>
+<span class="cm">    @param newEntry The entry to be inserted.</span>
+<span class="cm">    @return True if the entery can be inserted, false otherwise. */</span>
+    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">newEntry</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="cm">/** Remove the entry at a given position.</span>
+<span class="cm">    @post The entry at the given position will no longer exist at that position</span>
+<span class="cm">        if 1 &lt;= position &lt;= length and all entries after the removal point will</span>
+<span class="cm">        be moved forward by one.</span>
+<span class="cm">    @param position The position of the item to be removed.</span>
+<span class="cm">    @return If there is entry at the given position exists it will be removed</span>
+<span class="cm">        and the function will return true. If there is no entry at the given</span>
+<span class="cm">        position then false will be returned. */</span>
+    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">remove</span><span class="p">(</span><span class="kt">int</span> <span class="n">position</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="cm">/** Remove all entries from the list.</span>
+<span class="cm">    @post The list will be empty. */</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">clear</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="cm">/** Get the entry at a given position.</span>
+<span class="cm">    @pre An entry should be at the given position (i.e.,</span>
+<span class="cm">        1 &lt;= position &lt;= length()</span>
+<span class="cm">    @return The entry at the given position. */</span>
+    <span class="k">virtual</span> <span class="n">T</span> <span class="nf">entry</span><span class="p">(</span><span class="kt">int</span> <span class="n">position</span><span class="p">)</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="cm">/** Replace the entry at the given position.</span>
+<span class="cm">    @pre 1 &lt;= position &lt;= length()</span>
+<span class="cm">    @post The previous entry will be replaced with the new entry.</span>
+<span class="cm">    @param position The position in the list of the entry to be replaced.</span>
+<span class="cm">    @param newEntry The replacement entry */</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">replace</span><span class="p">(</span><span class="kt">int</span> <span class="n">position</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">newEntery</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif </span><span class="c1">// _LIST_INTERFACE_H_</span>
+</pre></div>
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-01-04T12:00:00-08:00"> Jan 04, 2019</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="/author/jay-ess/"><i class="fa fa-user"></i> Jay Ess</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/markdown">markdown</a>
+        /
+	<a href="/tag/pygments">pygments</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4>Social</h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/jsaundersee"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://github.com/jay3ss"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2019 Jay Ess
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.en"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+
+
+</body>
+</html>
