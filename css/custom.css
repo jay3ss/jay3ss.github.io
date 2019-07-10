@@ -60,3 +60,16 @@ a:active, a:visited {
 .highlight {
   padding: 0.5em 0 0.5em 0;
 }
+
+/* Solutions for mobile and small screens  */
+@media (max-width: 650px) {
+  body {
+    padding: 1em;
+  }
+    #banner h1{
+       font-size: 30px; /* !important;*/
+    }
+    #banner .intro{
+        font-size: 16px;
+    }
+}
