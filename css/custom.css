@@ -7,18 +7,24 @@ html, p, li {
   font-size: 1.1rem;
 }
 
+pre, code {
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
 pre {
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
   border: none;
   border-left: 2px solid #4e4e4d;
   border-radius: 0;
+  font-weight: 500;
 }
 
 code {
   color: #888;
   background-color: black;
-  font-size: 1.1rem;
-  font-weight: 500;
+
+  /* font-weight: 500; */
 }
 
 ul {
@@ -75,4 +81,8 @@ a:active, a:visited {
   .highlight, pre, code {
     font-size: 0.8rem;
   }
+
+  /* pre {
+    font-weight: 500;
+  } */
 }
