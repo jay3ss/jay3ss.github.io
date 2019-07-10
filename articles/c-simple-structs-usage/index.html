@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>C++: Simple Structs Usage - Lab137</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="../../img/favicon.ico" rel="icon">
+
+<link rel="canonical" href="../../articles/c-simple-structs-usage/">
+
+        <meta name="author" content="Jay Ess" />
+        <meta name="keywords" content="C++,struct,beginner" />
+        <meta name="description" content="Similar to arrays, structs allow you to hold a group of data. structs allow you to group together related members that would be awkwardly expressed as multiple arrays (e.g., the x- and y-coordinates of a pixel or the name, address, and telephone number of a person) into one convenient …" />
+
+        <meta property="og:site_name" content="Lab137" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="C++: Simple Structs Usage"/>
+        <meta property="og:url" content="../../articles/c-simple-structs-usage/"/>
+        <meta property="og:description" content="Similar to arrays, structs allow you to hold a group of data. structs allow you to group together related members that would be awkwardly expressed as multiple arrays (e.g., the x- and y-coordinates of a pixel or the name, address, and telephone number of a person) into one convenient …"/>
+        <meta property="article:published_time" content="2019-06-19" />
+            <meta property="article:section" content="articles" />
+            <meta property="article:tag" content="C++" />
+            <meta property="article:tag" content="struct" />
+            <meta property="article:tag" content="beginner" />
+            <meta property="article:author" content="Jay Ess" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../theme/css/bootstrap.cyborg.min.css" type="text/css"/>
+    <link href="../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../theme/css/style.css" type="text/css"/>
+        <link href="../../css/custom.css" rel="stylesheet">
+
+        <link href="../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Lab137 ATOM Feed"/>
+
+        <link href="../../feeds/articles.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Lab137 articles ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../" class="navbar-brand">
+Lab137            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="../../pages/about/">
+                             About
+                          </a></li>
+                         <li><a href="../../pages/privacy-policy/">
+                             Privacy Policy
+                          </a></li>
+                        <li class="active">
+                            <a href="../../category/articles">Articles</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../articles/c-simple-structs-usage/"
+                       rel="bookmark"
+                       title="Permalink to C++: Simple Structs Usage">
+                        C++: Simple Structs Usage
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <p>Similar to arrays, structs allow you to hold a group of data. structs allow
+you to group together related members that would be awkwardly expressed as
+multiple arrays (e.g., the x- and y-coordinates of a pixel or the name,
+address, and telephone number of a person) into one convenient unit.</p>
+<p>Not only do structs group data, they're also easy to define and use.</p>
+<h2>Declaring a Struct</h2>
+<p>The example below shows the semantics of declaring a struct. Just replace
+whatever is inside of the <code>&lt;...&gt;</code> with the appropriate text.</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="o">&lt;</span><span class="n">tag</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="o">&lt;</span><span class="n">data</span><span class="o">-</span><span class="n">type</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">member</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="c1">// more declarations...</span>
+<span class="p">};</span>  <span class="c1">// notice the semicolon</span>
+</pre></div>
+
+
+<p>For example</p>
+<ul>
+<li><code>&lt;tag&gt;</code>: is the name of the struct, so <code>Student</code></li>
+<li><code>&lt;data-type&gt;</code>: is the data type of the member (variable), so <code>int</code></li>
+<li><code>&lt;member-name&gt;</code>: is the name of the member (variable), so <code>id</code></li>
+</ul>
+<p>Put it all together (plus some additional members) and we have</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">Student</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>             <span class="c1">// Student&#39;s ID number</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>   <span class="c1">// Student&#39;s name</span>
+    <span class="kt">float</span> <span class="n">gpa</span><span class="p">;</span>          <span class="c1">// Student&#39;s GPA</span>
+    <span class="kt">int</span> <span class="n">gradeLevel</span><span class="p">;</span>     <span class="c1">// Students current grade level (e.g., 11)</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>Notice how I left the tag (<code>Student</code>) capitalized? I like to do that so when
+I'm reading my code I can easily spot the declaration of a struct. This
+<code>Student</code> struct is basically a new data type and we can use it as such.</p>
+<h2>Defining a Struct Variable</h2>
+<p>It's no different defining a variable of type <code>Student</code> than it is of <code>int</code>
+or <code>double</code>. For example,</p>
+<div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">student</span><span class="p">;</span>
+</pre></div>
+
+
+<p>We just declared a variable named <code>student</code> with the type of <code>Student</code>. Simple!</p>
+<h3>Initialization Lists</h3>
+<p>You can also use an initialization list to when defining a struct.</p>
+<div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">student</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5678</span><span class="p">,</span> <span class="s">&quot;A. Student&quot;</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mi">12</span><span class="p">};</span>
+</pre></div>
+
+
+<p>You don't have to provide an initializer for each member of the struct, but you
+can't skip any either. That means that if you skip initializing one member then
+you must leave all of the members that follow it uninitialized as well.</p>
+<div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">stu1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">6789</span><span class="p">,</span> <span class="s">&quot;Billy&quot;</span><span class="p">};</span> <span class="c1">// works</span>
+<span class="n">Student</span> <span class="n">stu2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">6789</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mi">12</span><span class="p">};</span> <span class="c1">// does not work, skipped &quot;name&quot;</span>
+</pre></div>
+
+
+<h2>Using a Struct</h2>
+<p>We use the dot (<code>.</code>) operator to set and access the members of a struct like
+below</p>
+<div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">johnny</span><span class="p">;</span>
+<span class="n">johnny</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span>
+<span class="n">johnny</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Johnny B. Goode&quot;</span><span class="p">;</span>
+<span class="n">johnny</span><span class="p">.</span><span class="n">gpa</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">;</span>
+<span class="n">johnny</span><span class="p">.</span><span class="n">gradeLevel</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+<span class="c1">// Student johnny = {1234, &quot;Johnny B. Goode&quot;, 1.1, 7} // also works</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ID:</span><span class="se">\t\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">johnny</span><span class="p">.</span><span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+          <span class="o">&lt;&lt;</span> <span class="s">&quot;Name:</span><span class="se">\t\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">johnny</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+          <span class="o">&lt;&lt;</span> <span class="s">&quot;GPA:</span><span class="se">\t\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">johnny</span><span class="p">.</span><span class="n">gpa</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+          <span class="o">&lt;&lt;</span> <span class="s">&quot;Grade Level:</span><span class="se">\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">johnny</span><span class="p">.</span><span class="n">gradeLevel</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<p>After we compile and run this, the output will be</p>
+<div class="highlight"><pre><span></span><span class="n">ID</span><span class="o">:</span>             <span class="mi">1234</span>
+<span class="n">Name</span><span class="o">:</span>           <span class="n">Johnny</span> <span class="n">B</span><span class="o">.</span> <span class="n">Goode</span>
+<span class="n">GPA</span><span class="o">:</span>            <span class="mf">1.1</span>
+<span class="n">Grade</span> <span class="n">Level</span><span class="o">:</span>    <span class="mi">7</span>
+</pre></div>
+
+
+<p>This may seem like a lot of work, but its usefulness becomes immediately clear
+when we have multiple students.</p>
+<h2>Array of Structs</h2>
+<p>Instead of having to declare multiple arrays (or vectors) or variables we can
+declare an array (or vector) of type <code>Student</code> and use a loop to set or access
+the members of each element of the array (or vector). For example</p>
+<div class="highlight"><pre><span></span><span class="c1">// const int NUMBER_OF_STUDENTS = &lt;pick a number&gt;;</span>
+<span class="n">Student</span> <span class="n">students</span><span class="p">[</span><span class="n">NUMBER_OF_STUDENTS</span><span class="p">];</span>
+
+<span class="c1">// Set the member for each element of the array</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUMBER_OF_STUDENTS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter student ID: &quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">ignore</span><span class="p">();</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter student name: &quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter student GPA: &quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">gpa</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter student grade level: &quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">gradeLevel</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Print out the member for each element of the array</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUMBER_OF_STUDENTS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Student #&quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;ID:</span><span class="se">\t\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;Name:</span><span class="se">\t\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;GPA:</span><span class="se">\t\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">gpa</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;Grade Level:</span><span class="se">\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">gradeLevel</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2>Pointer to Structs</h2>
+<p>You define a pointer to a struct in the exact same way that you'd define a
+pointer to any other data type</p>
+<div class="highlight"><pre><span></span><span class="n">Student</span><span class="o">*</span> <span class="n">student</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Using a pointer to a struct is a <em>little</em> bit more involved. If you need to
+use a pointer to a struct then you have a couple of options with one of them
+being <em>much</em> easier and the preferred way.</p>
+<h3>Dereferencing</h3>
+<p>I'm going to start with the awkward notation first. To dereference a pointer
+you use the star (<code>*</code>) operator just like any other pointer. However, if you
+want to access the member of a pointer to a struct you'd <em>think</em> that the <code>*</code>
+operator would be all that's necessary</p>
+<div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">student</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</pre></div>
+
+
+<p>The above should print out the string that's at <code>name</code>, right? Wrong! You're
+actually trying to dereference <code>student.name</code> <em>not</em> <code>student</code>. The <code>.</code>
+operator has a higher precedence than <code>*</code> so you need to use parentheses to
+give the <code>*</code> higher precedence.</p>
+<div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="o">*</span><span class="n">student</span><span class="p">).</span><span class="n">name</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>Now</strong> we'll print out the <code>name</code>. This is very awkward and can actually be
+confusing too. This is why the arrow notation is better.</p>
+<h3>Arrow Notation</h3>
+<p>Instead of using the clumsy dereferencing notation we're going to prefer using
+the arrow operator (<code>-&gt;</code>). As you'll see, it's very similar to the dot notation</p>
+<div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">student</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">;</span>
+</pre></div>
+
+
+<p>This is much easier on the eyes.</p>
+<h2>Array Members</h2>
+<p>Structs can have an array as a member, but you have to take care of how you
+define them. Member arrays must have their lengths defined in the definition of
+the struct <em>unless</em> it's the last member of the struct
+<a href="#references">[1]</a>. For example,</p>
+<div class="highlight"><pre><span></span><span class="c1">// Will compile, flexible length member array declared</span>
+<span class="c1">// as last member</span>
+<span class="k">struct</span> <span class="n">Testing1</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">numbers</span><span class="p">[];</span>
+<span class="p">};</span>
+
+<span class="c1">// Won&#39;t compile, member array length not declared</span>
+<span class="k">struct</span> <span class="n">Testing2</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">numbers</span><span class="p">[];</span>
+    <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Will compile, member array length declared</span>
+<span class="k">struct</span> <span class="n">Testing3</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>To use an array member, you use it just like any other array</p>
+<div class="highlight"><pre><span></span><span class="n">Testing3</span> <span class="n">testing</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">testing</span><span class="p">.</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2>Nested Structs</h2>
+<p>You can also have nested structs (one within another). This is done in the
+same manner that you'd define any other member. For example, we can create a
+new struct that holds a US address</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">Address</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">street</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">city</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">zipcode</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>and now we can update our <code>Student</code> struct to include the <code>Address</code> struct</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">Student</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">gpa</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">gradeLevel</span><span class="p">;</span>
+    <span class="n">Address</span> <span class="n">address</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>To access member struct, we use the dot notation twice</p>
+<div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">student</span><span class="p">;</span>
+<span class="n">student</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">street</span> <span class="o">=</span> <span class="s">&quot;123 Fake St.&quot;</span><span class="p">;</span>
+<span class="n">student</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">city</span> <span class="o">=</span> <span class="s">&quot;Springfield&quot;</span><span class="p">;</span>
+<span class="n">student</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">zipcode</span> <span class="o">=</span> <span class="mi">97475</span><span class="p">;</span>
+<span class="n">student</span><span class="p">.</span><span class="n">address</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">&quot;OR&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Or, if we're using a pointer to a struct we use the arrow and dot operators
+together</p>
+<div class="highlight"><pre><span></span><span class="n">Student</span><span class="o">*</span> <span class="n">student</span><span class="p">;</span>
+<span class="n">student</span><span class="o">-&gt;</span><span class="n">address</span><span class="p">.</span><span class="n">street</span> <span class="o">=</span> <span class="s">&quot;123 Fake St.&quot;</span><span class="p">;</span>
+<span class="n">student</span><span class="o">-&gt;</span><span class="n">address</span><span class="p">.</span><span class="n">city</span> <span class="o">=</span> <span class="s">&quot;Springfield&quot;</span><span class="p">;</span>
+<span class="n">student</span><span class="o">-&gt;</span><span class="n">address</span><span class="p">.</span><span class="n">zipcode</span> <span class="o">=</span> <span class="mi">97475</span><span class="p">;</span>
+<span class="n">student</span><span class="o">-&gt;</span><span class="n">address</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">&quot;OR&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<h2>Conclusion</h2>
+<p>We've learned what a struct is, what it's used for, and different ways of using
+structs. Now, go on and make use of this knowledge to create some great
+programs!</p>
+<h2><a name="references"></a>References</h2>
+<ol>
+<li><a href="https://www.pearson.com/us/higher-education/product/Gaddis-Starting-Out-with-C-from-Control-Structures-to-Objects-8th-Edition/9780133769395.html">Starting out with C++: From Control Structure Through Objects, 8th Edition</a></li>
+<li><a href="https://www.cprogramming.com/tutorial/lesson7.html">Structures in C++ - Tutorial - Cprogramming.com</a></li>
+</ol>
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-06-19T12:00:00-07:00"> Jun 19, 2019</time>
+    </span>
+
+
+            <span class="label label-default">By</span>
+            <a href="../../author/jay-ess/"><i class="fa fa-user"></i> Jay Ess</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../tag/c">C++</a>
+        /
+	<a href="../../tag/struct">struct</a>
+        /
+	<a href="../../tag/beginner">beginner</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4>Social</h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/jsaundersee"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://github.com/jay3ss"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2019 Jay Ess
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>                <p><small>
+
+
+
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.en"><img alt="Creative Commons License" style="border-width:0" src="../../theme/images/cc/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../theme/js/respond.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-50430351-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
