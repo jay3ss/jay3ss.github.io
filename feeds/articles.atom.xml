@@ -365,7 +365,7 @@ raise an error if the stack is empty and return the item (without modifying the
 stack!) otherwise. Pretty straightforward, but it will require us to create our
 own exception.&lt;/p&gt;
 &lt;p&gt;The &lt;a href="https://docs.python.org/3/library/exceptions.html#Exception"&gt;documentation&lt;/a&gt;
-states that when creating user-define exceptions we should derive from the
+states that when creating user-defined exceptions we should derive from the
 &lt;code&gt;Exception&lt;/code&gt; class, so that's what we're going to do. We're going to go with a
 meaningful name, otherwise we may not live very long.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# exception.py&lt;/span&gt;
