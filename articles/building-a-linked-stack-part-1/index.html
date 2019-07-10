@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="../../img/favicon.ico" rel="icon">
+    <link href="https://lab137.org/img/favicon.ico" rel="icon">
 
-<link rel="canonical" href="../../articles/building-a-linked-stack-part-1/">
+<link rel="canonical" href="https://lab137.org/articles/building-a-linked-stack-part-1/">
 
         <meta name="author" content="Jay Ess" />
         <meta name="keywords" content="data structure,stack,Python" />
@@ -19,7 +19,7 @@
         <meta property="og:site_name" content="Lab137" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Building a Linked Stack: Part 1"/>
-        <meta property="og:url" content="../../articles/building-a-linked-stack-part-1/"/>
+        <meta property="og:url" content="https://lab137.org/articles/building-a-linked-stack-part-1/"/>
         <meta property="og:description" content="This is the first article in a multi-part series on the stack data structure. This series defines what a stack is and what it does, then implement a link-based stack What is a Stack? A stack is a data structure that holds data in LIFO order. This means that whatever …"/>
         <meta property="article:published_time" content="2019-06-12" />
             <meta property="article:section" content="articles" />
@@ -31,17 +31,17 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="../../theme/css/bootstrap.cyborg.min.css" type="text/css"/>
-    <link href="../../theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://lab137.org/theme/css/bootstrap.cyborg.min.css" type="text/css"/>
+    <link href="https://lab137.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../../theme/css/pygments/monokai.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../theme/css/style.css" type="text/css"/>
-        <link href="../../css/custom.css" rel="stylesheet">
+    <link href="https://lab137.org/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lab137.org/theme/css/style.css" type="text/css"/>
+        <link href="https://lab137.org/css/custom.css" rel="stylesheet">
 
-        <link href="../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://lab137.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Lab137 ATOM Feed"/>
 
-        <link href="../../feeds/articles.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://lab137.org/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate"
               title="Lab137 articles ATOM Feed"/>
 </head>
 <body>
@@ -55,19 +55,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="../../" class="navbar-brand">
+            <a href="https://lab137.org/" class="navbar-brand">
 Lab137            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="../../pages/about/">
+                         <li><a href="https://lab137.org/pages/about/">
                              About
                           </a></li>
-                         <li><a href="../../pages/privacy-policy/">
+                         <li><a href="https://lab137.org/pages/privacy-policy/">
                              Privacy Policy
                           </a></li>
                         <li class="active">
-                            <a href="../../category/articles">Articles</a>
+                            <a href="https://lab137.org/category/articles">Articles</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -88,7 +88,7 @@ Lab137            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="../../articles/building-a-linked-stack-part-1/"
+                    <a href="https://lab137.org/articles/building-a-linked-stack-part-1/"
                        rel="bookmark"
                        title="Permalink to Building a Linked Stack: Part 1">
                         Building a Linked Stack: Part 1
@@ -112,7 +112,7 @@ going to put them on top of your stack.</p>
 <div class="row">
     <div class="col-sm-12">
         <div class="thumbnail">
-            <img src="../../img/stack_of_plates.jpg"
+            <img src="https://lab137.org/img/stack_of_plates.jpg"
                 class="img-responsive align-center"
                 alt="A stack of dirty dishes"
                 title="A stack of dirty dishes">
@@ -191,7 +191,7 @@ direct access to the data. This quick and direct access comes at a cost.</p>
 <div class="row">
     <div class="col-md-12">
         <div class="thumbnail">
-            <img src="../../img/array.svg"
+            <img src="https://lab137.org/img/array.svg"
                  class="img-responsive align-center"
                  alt="A block of memory representing an array"
                  title="A block of memory representing an array">
@@ -237,7 +237,7 @@ to the next node indicated by an arrow.</p>
 <div class="row">
     <div class="col-sm-12">
         <div class="thumbnail">
-            <img src="../../img/node_scoured.svg"
+            <img src="https://lab137.org/img/node_scoured.svg"
                  class="img-responsive align-center"
                  alt="A single node"
                  title="A single node">
@@ -255,7 +255,7 @@ Python (or <code>nullptr</code> in C++) indicating the end of the chain.</p>
 <div class="row">
     <div class="col-sm-12">
         <div class="thumbnail">
-            <img src="../../img/singly-linked-list.svg"
+            <img src="https://lab137.org/img/singly-linked-list.svg"
                  class="img-responsive align-center"
                  alt="A link of nodes"
                  title="A link of nodes">
@@ -275,7 +275,7 @@ must start with the head of the structure and traverse the chain until you
 reach the desired entry.</p>
 <h2>The Stack Interface</h2>
 <p>We're going to start with defining an interface for the stack then
-move on to implementing the linked stack in the <a href="../../articles/building-a-linked-stack-part-2/">next
+move on to implementing the linked stack in the <a href="https://lab137.org/articles/building-a-linked-stack-part-2/">next
 article</a>. The point of
 making an interface is to make sure that we implement the correct methods in
 our implementation. Now, this may not seem like it's such a big deal right now
@@ -347,7 +347,7 @@ wrote. If these methods haven't been implemented, then the specifications have
 not been met and the subclass can't be instantiated. Neat!</p>
 <h2>Conclusion</h2>
 <p>In this article we talked about what a stack is, what a linked stack is, and
-then we wrote an interface for a stack. In the <a href="../../articles/building-a-linked-stack-part-2/">next
+then we wrote an interface for a stack. In the <a href="https://lab137.org/articles/building-a-linked-stack-part-2/">next
 article</a>, we'll start
 implementing the linked stack by implementing the <code>push</code> method.</p>
 <h2>References</h2>
@@ -370,16 +370,16 @@ implementing the linked stack by implementing the <code>push</code> method.</p>
 
 
             <span class="label label-default">By</span>
-            <a href="../../author/jay-ess/"><i class="fa fa-user"></i> Jay Ess</a>
+            <a href="https://lab137.org/author/jay-ess/"><i class="fa fa-user"></i> Jay Ess</a>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="../../tag/data-structure">data structure</a>
+	<a href="https://lab137.org/tag/data-structure">data structure</a>
         /
-	<a href="../../tag/stack">stack</a>
+	<a href="https://lab137.org/tag/stack">stack</a>
         /
-	<a href="../../tag/python">Python</a>
+	<a href="https://lab137.org/tag/python">Python</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -398,7 +398,7 @@ implementing the linked stack by implementing the <code>push</code> method.</p>
                 this.language = "en";
 
                         this.page.identifier = '2019-06-12-building-a-linked-stack-part-1';
-                        this.page.url = '../../articles/building-a-linked-stack-part-1/';
+                        this.page.url = 'https://lab137.org/articles/building-a-linked-stack-part-1/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -453,7 +453,7 @@ implementing the linked stack by implementing the <code>push</code> method.</p>
 
 
 
-  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.en"><img alt="Creative Commons License" style="border-width:0" src="../../theme/images/cc/80x15.png" /></a>
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.en"><img alt="Creative Commons License" style="border-width:0" src="https://lab137.org/theme/images/cc/80x15.png" /></a>
     Content
   licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Creative Commons Attribution-NonCommercial 4.0 International License</a>, except where indicated otherwise.
 </small></p>
@@ -462,13 +462,13 @@ implementing the linked stack by implementing the <code>push</code> method.</p>
       </div>
    </div>
 </footer>
-<script src="../../theme/js/jquery.min.js"></script>
+<script src="https://lab137.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../theme/js/bootstrap.min.js"></script>
+<script src="https://lab137.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../../theme/js/respond.min.js"></script>
+<script src="https://lab137.org/theme/js/respond.min.js"></script>
 
 
     <!-- Disqus -->
