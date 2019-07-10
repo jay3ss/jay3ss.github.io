@@ -65,11 +65,14 @@ a:active, a:visited {
 @media (max-width: 650px) {
   body {
     padding: 1em;
+    /* font-size: 0.9rem; */
   }
-    #banner h1{
-       font-size: 30px; /* !important;*/
-    }
-    #banner .intro{
-        font-size: 16px;
-    }
+  /* p, code, pre { */
+  p {
+    font-size: 1rem;
+  }
+
+  .highlight, pre, code {
+    font-size: 0.8rem;
+  }
 }
