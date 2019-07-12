@@ -69,11 +69,6 @@ a:active, a:visited {
 
 /* Solutions for mobile and small screens  */
 @media (max-width: 650px) {
-  body {
-    padding: 1em;
-    /* font-size: 0.9rem; */
-  }
-  /* p, code, pre { */
   p {
     font-size: 1rem;
   }
