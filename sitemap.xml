@@ -5,14 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/</loc>
-<lastmod>2019-07-11T21:54:57-00:00</lastmod>
+<lastmod>2019-07-16T12:46:05-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tags.html</loc>
+<lastmod>2019-07-16T12:46:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/categories.html</loc>
-<lastmod>2019-07-11T21:54:57-00:00</lastmod>
+<lastmod>2019-07-16T12:46:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -27,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://lab137.org/pages/privacy-policy/</loc>
 <lastmod>2019-06-11T00:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/articles/simple-complex-number-algebra/</loc>
+<lastmod>2019-07-11T12:00:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -61,7 +75,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/articles/</loc>
-<lastmod>2019-06-19T12:00:00-07:53</lastmod>
+<lastmod>2019-07-11T12:00:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/complex-numbers/</loc>
+<lastmod>2019-07-11T12:00:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/math/</loc>
+<lastmod>2019-07-11T12:00:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/algebra/</loc>
+<lastmod>2019-07-11T12:00:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -110,7 +145,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/author/jay-ess/</loc>
-<lastmod>2019-06-19T12:00:00-07:53</lastmod>
+<lastmod>2019-07-11T12:00:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
