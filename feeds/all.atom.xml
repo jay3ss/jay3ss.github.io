@@ -1,5 +1,470 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Lab137</title><link href="https://lab137.org/" rel="alternate"></link><link href="https://lab137.org/feeds/all.atom.xml" rel="self"></link><id>https://lab137.org/</id><updated>2019-06-19T12:00:00-07:00</updated><entry><title>C++: Simple Structs Usage</title><link href="https://lab137.org/articles/c-simple-structs-usage/" rel="alternate"></link><published>2019-06-19T12:00:00-07:00</published><updated>2019-06-19T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-19:/articles/c-simple-structs-usage/</id><summary type="html">&lt;p&gt;Similar to arrays, structs allow you to hold a group of data. structs allow
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lab137</title><link href="https://lab137.org/" rel="alternate"></link><link href="https://lab137.org/feeds/all.atom.xml" rel="self"></link><id>https://lab137.org/</id><updated>2019-07-11T12:00:00-07:00</updated><entry><title>Simple Complex Number Algebra</title><link href="https://lab137.org/articles/simple-complex-number-algebra/" rel="alternate"></link><published>2019-07-11T12:00:00-07:00</published><updated>2019-07-11T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-07-11:/articles/simple-complex-number-algebra/</id><summary type="html">&lt;p&gt;I decided to start reviewing some of my controls courses from university to
+brush up on the fundamentals. While reviewing, I had an "Oh shit" moment when I
+realized that I've forgotten some &lt;em&gt;really&lt;/em&gt; basic math. Namely, working with
+complex numbers. I decided to write this article so that I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I decided to start reviewing some of my controls courses from university to
+brush up on the fundamentals. While reviewing, I had an "Oh shit" moment when I
+realized that I've forgotten some &lt;em&gt;really&lt;/em&gt; basic math. Namely, working with
+complex numbers. I decided to write this article so that I can easily find a
+reference if I ever need it (hopefully it helps you too). (BIG thanks to Dr.
+Tabrizi for putting together notes that are very comprehensible.)&lt;/p&gt;
+&lt;h2&gt;General Form of a Complex Number&lt;/h2&gt;
+&lt;!-- Check the link --&gt;
+
+&lt;p&gt;According to Wikipedia, &lt;a href="https://en.wikipedia.org/wiki/Complex_number" title="Wikipedia - Complex Numbers"&gt;complex numbers&lt;/a&gt; are&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[...] regarded in the mathematical sciences as just as "real" as the real
+numbers, and are fundamental in many aspects of the scientific description of
+the natural world.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Complex numbers can be written in two forms: rectangular and polar. They live
+in the 2-dimensional complex plane with the horizontal axis is called the
+"real" axis while the vertical axis is called the "imaginary" axis. The figure
+below shows this nicely.&lt;/p&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-sm-12"&gt;
+        &lt;div class="thumbnail"&gt;
+            &lt;img src="https://lab137.org/img/complex_number_rect.svg"
+                 class="img-responsive align-center"
+                 alt="A complex number"
+                 title="A complex number"&gt;
+            &lt;div class="caption text-center"&gt;
+                A complex number z, as a point (red) and its position vector (blue).
+                Image courtesy of
+                &lt;a href="https://en.wikipedia.org/wiki/Complex_number#/media/File:A_plus_bi.svg"&gt;
+                    LasinIkamusumeFan
+                &lt;/a&gt; under the
+                &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en"&gt;
+                    Creative Commons 4.0 License
+                &lt;/a&gt;.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; that in electrical engineering &lt;span class="math"&gt;\(j\)&lt;/span&gt; denotes the imaginary number/axis
+so as to avoid confusion with the time-varying current &lt;span class="math"&gt;\(i\)&lt;/span&gt;. This is the
+notation that I'll be using throughout this article. If this confuses you,
+then just replace every instance of &lt;span class="math"&gt;\(j\)&lt;/span&gt; with &lt;span class="math"&gt;\(i\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Rectangular Form&lt;/h3&gt;
+&lt;p&gt;The rectangular form of a complex number is as follows&lt;/p&gt;
+&lt;div class="math"&gt;$$
+z = a + jb.
+$$&lt;/div&gt;
+&lt;p&gt;The letters &lt;span class="math"&gt;\(a\)&lt;/span&gt; and &lt;span class="math"&gt;\(b\)&lt;/span&gt; are referred to as the real and imaginary components of
+the complex number &lt;span class="math"&gt;\(z\)&lt;/span&gt;, respectively. In the figure above, &lt;span class="math"&gt;\(a\)&lt;/span&gt; is the
+horizontal axis while &lt;span class="math"&gt;\(b\)&lt;/span&gt; is the vertical axis.&lt;/p&gt;
+&lt;p&gt;You may sometimes see &lt;span class="math"&gt;\(Re(z)\)&lt;/span&gt; and &lt;span class="math"&gt;\(Im(z)\)&lt;/span&gt; to mean the real and imaginary
+components of the complex number &lt;span class="math"&gt;\(z\)&lt;/span&gt;, respectively.&lt;/p&gt;
+&lt;h3&gt;Polar Form&lt;/h3&gt;
+&lt;p&gt;The rectangular form of a complex number is as follows&lt;/p&gt;
+&lt;div class="math"&gt;$$
+z = \|r\| e^{j\phi}.
+$$&lt;/div&gt;
+&lt;p&gt;and is shown in the figure below.&lt;/p&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-sm-12"&gt;
+        &lt;div class="thumbnail"&gt;
+            &lt;img src="https://lab137.org/img/complex_number_polar_opt.svg"
+                 class="img-responsive align-center"
+                 alt="A complex number"
+                 title="A complex number"&gt;
+            &lt;div class="caption text-center"&gt;
+                A complex number z, as a point (red) and its position vector (blue).
+                Image courtesy of
+                &lt;a href="https://en.wikipedia.org/wiki/File:Complex_number_illustration_modarg.svg"&gt;
+                    Oleg Alexandrov
+                &lt;/a&gt; under the
+                &lt;a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en"&gt;
+                    Creative Commons 3.0 License
+                &lt;/a&gt;.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;span class="math"&gt;\(\|r\|\)&lt;/span&gt; is the &lt;em&gt;magnitude&lt;/em&gt; and &lt;span class="math"&gt;\(\phi\)&lt;/span&gt; is the &lt;em&gt;phase angle&lt;/em&gt; of the complex
+number &lt;span class="math"&gt;\(z\)&lt;/span&gt;, respectively. To help explain this, you can think of a complex
+number as a vector in the complex plane with the magnitude being the length of
+the vector and the phase angle the direction.&lt;/p&gt;
+&lt;h2&gt;Converting Between Forms&lt;/h2&gt;
+&lt;p&gt;It's often useful (or necessary) to convert from one form to another to either
+get information (such as magnitude) or to aid in calculations (adding complex
+numbers is easier when both numbers are in rectangular form).&lt;/p&gt;
+&lt;h3&gt;Converting From Polar to Rectangular Form&lt;/h3&gt;
+&lt;p&gt;To convert from polar to rectangular form, we will use Euler's formula and
+multiply the result by the magnitude &lt;span class="math"&gt;\(\|r\|\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align}
+    z &amp;amp;= \|r\|\left(\cos \phi + j \sin \phi \right) \nonumber \\
+      &amp;amp;= a + jb \label{eq:polar_to_rect}
+\end{align}
+$$&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Interesting side note: Euler made discoveries in so many different
+fields that it started getting to the point that there were too many
+discoveries/theorems being named after him, so&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[in] an effort to avoid naming everything after Euler, some discoveries and
+theorems are attributed to the first person to have proved them &lt;em&gt;after&lt;/em&gt; Euler.
+&lt;sup&gt;&lt;a href="#refs"&gt;1&lt;/a&gt;&lt;sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;p&gt;It usually helps to make everything clear by having examples. So, let's see how
+the conversion from polar to rectangular form actually works.&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(z = 2 \sqrt{2} \, e^{j \, \frac{\pi}{4}}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The first thing that we have to do is identify the magnitude and phase angle.
+Here, the magnitude is &lt;span class="math"&gt;\(\|r\| = 2 \sqrt{2}\)&lt;/span&gt; and the phase angle is
+&lt;span class="math"&gt;\(\phi = \frac{\pi}{4}\)&lt;/span&gt;. Now, it's just a matter of plugging everything in to
+Equation &lt;span class="math"&gt;\(\ref{eq:polar_to_rect}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    a + jb &amp;amp;= \|r\| \left(\cos \phi + j \sin \phi \right) \\
+    &amp;amp;= 2 \sqrt{2} \left(\cos \frac{\pi}{4} + j \sin \frac{\pi}{4} \right) \\
+    &amp;amp;= 2 \sqrt{2} \left(\frac{\sqrt{2}}{2} + j \frac{\sqrt{2}}{2} \right) \\
+    &amp;amp;= \boxed{2 + j2}
+\end{align*}
+$$&lt;/div&gt;
+&lt;h3&gt;Converting from Rectangular to Polar Form&lt;/h3&gt;
+&lt;p&gt;To convert from rectangular to polar form, we will need to find the magnitude
+and the phase angle of the complex number. To find the magnitude of &lt;span class="math"&gt;\(z\)&lt;/span&gt;, we
+will use the formula for the [Euclidean norm] (also known as the modulus, or
+norm)&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{equation}
+    \|r\| = \sqrt{a^2 + b^2}.
+    \label{eq:euclidean_norm}
+\end{equation}
+$$&lt;/div&gt;
+&lt;p&gt;Finding the phase angle can be a little bit tricky (which is what prompted me
+to write this article). Although you may be tempted to immediately use
+&lt;span class="math"&gt;\(\phi = \tan^{-1}{\frac{b}{a}}\)&lt;/span&gt;, you will quickly run into trouble. This
+equation only works for the &lt;em&gt;first&lt;/em&gt; quadrant. Therefore, you must determine
+which quadrant the complex number is in, which is the tricky part. Luckily, the
+table below shows you exactly how to find this out.&lt;/p&gt;
+&lt;!--
+    IMPORTANT! Don't remove the space in front of the div! It'll cause MathJax
+    to stop rendering in the table
+--&gt;
+
+&lt;p&gt;&lt;div class="table-responsive"&gt;
+  &lt;table class="table"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Conditions&lt;/th&gt;
+        &lt;th&gt;Quadrant&lt;/th&gt;
+        &lt;th&gt;Range of &lt;span class="math"&gt;\(\phi\)&lt;/span&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;span class="math"&gt;\(a \gt 0\,\)&lt;/span&gt; and &lt;span class="math"&gt;\(b \gt 0\)&lt;/span&gt;&lt;/td&gt;
+          &lt;td&gt;1&lt;sup&gt;st&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;0° &lt;span class="math"&gt;\(\lt \phi \lt\)&lt;/span&gt; 90°&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;span class="math"&gt;\(a \gt 0\,\)&lt;/span&gt; and &lt;span class="math"&gt;\(b \gt 0\)&lt;/span&gt;&lt;/td&gt;
+          &lt;td&gt;2&lt;sup&gt;nd&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;90° &lt;span class="math"&gt;\(\lt \phi \lt\)&lt;/span&gt; 180°&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;span class="math"&gt;\(a \gt 0\,\)&lt;/span&gt; and &lt;span class="math"&gt;\(b \gt 0\)&lt;/span&gt;&lt;/td&gt;
+          &lt;td&gt;3&lt;sup&gt;rd&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;180° &lt;span class="math"&gt;\(\lt \phi \lt\)&lt;/span&gt; 270°&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;a &lt;span class="math"&gt;\(\gt 0\,\)&lt;/span&gt; and b &lt;span class="math"&gt;\(\gt 0\)&lt;/span&gt;&lt;/td&gt;
+          &lt;td&gt;4&lt;sup&gt;th&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;270° &lt;span class="math"&gt;\(\lt \phi \lt\)&lt;/span&gt; 360°&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Once you know what quadrant the complex number is in, then finding the phase
+angle is pretty straightforward. Below I've created another table that lists
+the formula that you need to use to find the (numerical) phase angle dependent
+on the quadrant.&lt;/p&gt;
+&lt;!--
+    IMPORTANT! Don't remove the space in front of the div! It'll cause MathJax
+    to stop rendering in the table
+--&gt;
+
+&lt;p&gt;&lt;div class="table-responsive" id="quadrants"&gt;
+  &lt;table class="table"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Quadrant&lt;/th&gt;
+        &lt;th&gt;Formula&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;1&lt;sup&gt;st&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;&lt;span class="math"&gt;\(\phi = \tan^{-1}{\frac{b}{a}}\)&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;2&lt;sup&gt;nd&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;&lt;span class="math"&gt;\(\phi = \pi - \tan^{-1}{\frac{\left|b\right|}{a}}\)&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;3&lt;sup&gt;rd&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;&lt;span class="math"&gt;\(\phi = \pi + \tan^{-1}{\left|\frac{b}{a}\right|}\)&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;4&lt;sup&gt;th&lt;/sup&gt; quadrant&lt;/td&gt;
+          &lt;td&gt;&lt;span class="math"&gt;\(\phi = -\tan^{-1}{\frac{\left|b\right|}{a}}\)&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h4&gt;Example&lt;/h4&gt;
+&lt;p&gt;Let's convert &lt;span class="math"&gt;\(z = \pm 3 \pm j3\)&lt;/span&gt; to polar form.&lt;/p&gt;
+&lt;h5&gt;First Quadrant&lt;/h5&gt;
+&lt;p&gt;Let's first do &lt;span class="math"&gt;\(z = 3 + j3\)&lt;/span&gt;. It's very simple to find the magnitude so let's do
+that first.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \|r\| &amp;amp;= \sqrt{a^2 + b^2} \\
+          &amp;amp;= \sqrt{3^2 + 3^2} \\
+          &amp;amp;= \sqrt{18} \\
+          &amp;amp;= \boxed{3 \sqrt{2}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;We can tell that this number is in the first quadrant because both of the real
+and imaginary components are positive. Therefore, according to the above
+&lt;a href="#quadrants"&gt;table&lt;/a&gt;, we will use &lt;span class="math"&gt;\(\phi = \tan^{-1}{\frac{b}{a}}\)&lt;/span&gt; to find the phase
+angle.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \phi &amp;amp;= \tan^{-1}{\frac{b}{a}} \\
+         &amp;amp;= \tan^{-1}{\frac{3}{3}} \\
+         &amp;amp;= \boxed{\frac{\pi}{4}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;Combining the magnitude and phase leaves us with the polar form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\boxed{z = 3 \sqrt{2} \, e \, ^{j \frac{\pi}{4}}}
+$$&lt;/div&gt;
+&lt;h5&gt;Second Quadrant&lt;/h5&gt;
+&lt;p&gt;Now, let's do &lt;span class="math"&gt;\(z = -3 + j3\)&lt;/span&gt;. Again, we're going to find the magnitude first.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \|r\| &amp;amp;= \sqrt{\left(-3 \right)^2 + 3^2} \\
+          &amp;amp;= \sqrt{18} \\
+          &amp;amp;= \boxed{3 \sqrt{2}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;We can tell that this number is in the second quadrant because the real
+component is negative while the imaginary component is positive.
+Therefore, according to the above &lt;a href="#quadrants"&gt;table&lt;/a&gt;, we will use
+&lt;span class="math"&gt;\(\phi = \pi - \tan^{-1}{\frac{b}{\left|a\right|}}\)&lt;/span&gt; to find the phase angle.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \phi &amp;amp;= \pi - \tan^{-1}{\frac{b}{\left|a\right|}} \\
+         &amp;amp;= \pi - \tan^{-1}{\frac{3}{\left|-3\right|}} \\
+         &amp;amp;= \pi - \frac{\pi}{4} \\
+         &amp;amp;= \boxed{\frac{3\pi}{4}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;Combining the magnitude and phase leaves us with the polar form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\boxed{z = 3 \sqrt{2} \, e \, ^{j \frac{3\pi}{4}}}
+$$&lt;/div&gt;
+&lt;h5&gt;Third Quadrant&lt;/h5&gt;
+&lt;p&gt;Now, let's do &lt;span class="math"&gt;\(z = -3 - j3\)&lt;/span&gt;. Again, we're going to find the magnitude first.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \|r\| &amp;amp;= \sqrt{\left(-3 \right)^2 + \left(-3 \right)^2} \\
+          &amp;amp;= \sqrt{18} \\
+          &amp;amp;= \boxed{3 \sqrt{2}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;We can tell that this number is in the third quadrant because both of the real
+and imaginary components are negative. Therefore, according to the above
+&lt;a href="#quadrants"&gt;table&lt;/a&gt;, we will use &lt;span class="math"&gt;\(\phi = \pi + \tan^{-1}{\left|\frac{b}{a}\right|}\)&lt;/span&gt;
+to find the phase angle.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \phi &amp;amp;= \pi + \tan^{-1}{\left|\frac{b}{a}\right|} \\
+         &amp;amp;= \pi + \tan^{-1}{\left|\frac{-3}{-3}\right|} \\
+         &amp;amp;= \pi + \frac{\pi}{4} \\
+         &amp;amp;= \boxed{\frac{5\pi}{4}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;Combining the magnitude and phase leaves us with the polar form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\boxed{z = 3 \sqrt{2} \, e \, ^{j \frac{5\pi}{4}}}
+$$&lt;/div&gt;
+&lt;h5&gt;Fourth Quadrant&lt;/h5&gt;
+&lt;p&gt;Now, let's do &lt;span class="math"&gt;\(z = 3 - j3\)&lt;/span&gt;. Again, we're going to find the magnitude first.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \|r\| &amp;amp;= \sqrt{3^2 + \left(-3 \right)^2} \\
+          &amp;amp;= \sqrt{18} \\
+          &amp;amp;= \boxed{3 \sqrt{2}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;We can tell that this number is in the fourth quadrant because real component
+is positive and the imaginary component is negative. Therefore, according to
+the above &lt;a href="#quadrants"&gt;table&lt;/a&gt;, we will use
+&lt;span class="math"&gt;\(\phi = -\tan^{-1}{\frac{\left|b\right|}{a}}\)&lt;/span&gt; to find the phase angle.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    \phi &amp;amp;= -\tan^{-1}{\frac{\left|b\right|}{a}} \\
+         &amp;amp;= -\tan^{-1}{\frac{\left|-3\right|}{-3}} \\
+         &amp;amp;= \boxed{-\frac{\pi}{4}}
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;Combining the magnitude and phase leaves us with the polar form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\boxed{z = 3 \sqrt{2} \, e \, ^{-j \frac{\pi}{4}}}
+$$&lt;/div&gt;
+&lt;h2&gt;Arithmetic Operations&lt;/h2&gt;
+&lt;p&gt;Now that we know how to convert from one form to another, we can perform
+arithmetic operations with complex numbers.&lt;/p&gt;
+&lt;h3&gt;Addition&lt;/h3&gt;
+&lt;p&gt;It's easiest to add and subtract complex numbers when they're in &lt;em&gt;rectangular&lt;/em&gt;
+form. So, the first thing to do is to convert all of the complex numbers to
+rectangular form if necessary. Then, you simply add the components together.&lt;/p&gt;
+&lt;p&gt;For example, suppose that you have two complex numbers &lt;span class="math"&gt;\(z_1 = a_1 + jb_1\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(z_2 = a_2 + jb_2\)&lt;/span&gt;. To get the new number &lt;span class="math"&gt;\(z_3 = z_1 + z_2\)&lt;/span&gt;, you would do the
+following&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    z_3 &amp;amp;= z_1 + z_2 \\
+        &amp;amp;= \left(a_1 + jb_1 \right) + \left(a_2 + jb_2 \right) \\
+        &amp;amp;= \left(a_1 + a_2 \right) + j\left(b_1 + b_2 \right) \\
+        &amp;amp;= a_3 + jb_3.
+\end{align*}
+$$&lt;/div&gt;
+&lt;h3&gt;Subtraction&lt;/h3&gt;
+&lt;p&gt;Subtraction works similarly to addition (just like with real numbers). First,
+we should make sure that all complex numbers are in rectangular form. Then, we
+can simply subtract the components of each complex number.&lt;/p&gt;
+&lt;p&gt;For example, suppose that you have two complex numbers &lt;span class="math"&gt;\(z_1 = a_1 + jb_1\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(z_2 = a_2 + jb_2\)&lt;/span&gt;. To get the new number &lt;span class="math"&gt;\(z_3 = z_1 + z_2\)&lt;/span&gt; you would do the
+following&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+    z_3 &amp;amp;= z_1 - z_2 \\
+        &amp;amp;= \left(a_1 + jb_1 \right) - \left(a_2 + jb_2 \right) \\
+        &amp;amp;= \left(a_1 - a_2 \right) + j\left(b_1 - b_2 \right) \\
+        &amp;amp;= a_3 + jb_3.
+\end{align*}
+$$&lt;/div&gt;
+&lt;h3&gt;Multiplication&lt;/h3&gt;
+&lt;p&gt;In contrast to addition and subtraction, multiplication of complex numbers is
+more easily performed when all complex numbers are in &lt;em&gt;polar&lt;/em&gt; form.&lt;/p&gt;
+&lt;p&gt;The first thing to do when multiplying complex numbers is to make sure to
+convert all of them into polar form. Next, we multiply the magnitudes and then
+add the phase angles.&lt;/p&gt;
+&lt;p&gt;For example, suppose that we have two complex numbers &lt;span class="math"&gt;\(z_1 = r_1 \, e^{j \phi_1}\)&lt;/span&gt;
+and &lt;span class="math"&gt;\(z_2 = r_2 \, e^{j \phi_2}\)&lt;/span&gt; and we want to multiply them. To multiply
+them, you would do the following&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align}
+    z_3 &amp;amp;= z_1 \cdot z_2 \\
+        &amp;amp;= \left(r_1 \, e^{j \phi_1} \right) \cdot \left(r_2 \, e^{j \phi_2} \right) \\
+        &amp;amp;= \left(r_1 \cdot r_2 \right) \, e^{\left(\phi_1 + \phi_2 \right)}.
+\end{align}
+$$&lt;/div&gt;
+&lt;h3&gt;Division&lt;/h3&gt;
+&lt;p&gt;Like multiplication, division of complex numbers is easiest when all of the
+complex numbers are in polar form. So, first convert all of the complex numbers
+to polar form, then divide the magnitudes and &lt;em&gt;subtract&lt;/em&gt; the phase angles.&lt;/p&gt;
+&lt;p&gt;For example, suppose that we have two complex numbers &lt;span class="math"&gt;\(z_1 = r_1 \, e^{j \phi_1}\)&lt;/span&gt;
+and &lt;span class="math"&gt;\(z_2 = r_2 \, e^{j \phi_2}\)&lt;/span&gt; and we want to multiply them. To multiply
+them, you would do the following&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align}
+    z_3 &amp;amp;= \frac{z_1}{z_2} \\
+        &amp;amp;= \frac{r_1 \, e^{j \phi_1}}{r_2 \, e^{j \phi_2}} \\
+        &amp;amp;= \frac{r_1}{r_2} \, e^{\left(\phi_1 - \phi_2 \right)}.
+\end{align}
+$$&lt;/div&gt;
+&lt;h2&gt;Complex Conjugate&lt;/h2&gt;
+&lt;p&gt;Every complex number has a complex conjugate and that conjugate is found by
+switching the signs of the imaginary component. For example, if we have a
+complex number &lt;span class="math"&gt;\(z = a + jb\)&lt;/span&gt; then its complex conjugate is &lt;span class="math"&gt;\(z^* = a - jb\)&lt;/span&gt;.
+Notice how only the sign of the imaginary component became negative and the
+real component's sign remained the same. Because we're just switching signs of
+the imaginary component, you can think of the complex conjugate as a reflection
+about the real axis. Also note the &lt;span class="math"&gt;\(^*\)&lt;/span&gt; next to the variable &lt;span class="math"&gt;\(z\)&lt;/span&gt;. This is one
+of the notations to denote a complex conjugate.&lt;/p&gt;
+&lt;p&gt;Complex conjugates are very important in math, physics, and engineering and you
+should definitely read about the &lt;a href="https://www.allaboutcircuits.com/technical-articles/importance-of-complex-conjugates/" title="All About Circuits - The Importance of Complex Conjugates"&gt;importance of complex conjugates&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this article, we learned about the different forms of a complex number and
+how to convert between them. We also learned how to add, subtract, multiply,
+and divide complex numbers. Finally, we learned how to find the complex
+conjugate of a complex number as well. If you have any comments or questions,
+please comment below.&lt;/p&gt;
+&lt;h2&gt;&lt;a name="refs"&gt;&lt;/a&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/List_of_things_named_after_Leonhard_Euler" title="Wikipedia - List of things named after Leonhard Euler"&gt;Wikipedia - List of things named after Leonhard Euler&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- Links --&gt;
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (true) {
+        align = (screen.width &lt; 651) ? "left" : align;
+        indent = (screen.width &lt; 651) ? "0em" : indent;
+        linebreak = (screen.width &lt; 651) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: ['STIX','TeX']," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('SansSerif' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="complex numbers"></category><category term="math"></category><category term="algebra"></category><category term="complex conjugate"></category><category term="imaginary numbers"></category></entry><entry><title>C++: Simple Structs Usage</title><link href="https://lab137.org/articles/c-simple-structs-usage/" rel="alternate"></link><published>2019-06-19T12:00:00-07:00</published><updated>2019-06-19T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-19:/articles/c-simple-structs-usage/</id><summary type="html">&lt;p&gt;Similar to arrays, structs allow you to hold a group of data. structs allow
 you to group together related members that would be awkwardly expressed as
 multiple arrays (e.g., the x- and y-coordinates of a pixel or the name,
 address, and telephone number of a person) into one convenient …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Similar to arrays, structs allow you to hold a group of data. structs allow
