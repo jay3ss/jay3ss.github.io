@@ -1,3 +1,8 @@
+a, .card-content a h3 {
+  color:#00d1b2;
+}
+
 .navbar-brand > .title{
   background-color: #00d1b2 !important;
+  color: white;
 }
