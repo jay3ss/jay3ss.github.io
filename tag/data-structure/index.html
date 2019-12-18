@@ -347,7 +347,7 @@ can make sure we've met our specifications. As a recap, here they are</p>
 
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">6</span><span class="n">a54ea098db0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">peek</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
      <span class="mi">11</span>         <span class="s2">&quot;&quot;&quot;Returns the top of the stack&quot;&quot;&quot;</span>
-     <span class="mi">12</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+     <span class="mi">12</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empt</span><span class="p">():</span>
 <span class="o">---&gt;</span> <span class="mi">13</span>             <span class="k">raise</span> <span class="n">EmptyException</span><span class="p">(</span><span class="s2">&quot;Stack is empty&quot;</span><span class="p">)</span>
      <span class="mi">14</span>
      <span class="mi">15</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">data</span>

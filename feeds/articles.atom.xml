@@ -1115,7 +1115,7 @@ can make sure we've met our specifications. As a recap, here they are&lt;/p&gt;
 
 &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="n"&gt;a54ea098db0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
      &lt;span class="mi"&gt;11&lt;/span&gt;         &lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;Returns the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-     &lt;span class="mi"&gt;12&lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+     &lt;span class="mi"&gt;12&lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_empt&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
 &lt;span class="o"&gt;---&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;             &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;EmptyException&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Stack is empty&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
      &lt;span class="mi"&gt;14&lt;/span&gt;
      &lt;span class="mi"&gt;15&lt;/span&gt;         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
@@ -1178,21 +1178,7 @@ is. But, what is a &lt;em&gt;singly&lt;/em&gt;-linked stack?&lt;/p&gt;
 holds the data and a reference to the next node in the chain such as shown in
 the figure below (recycled from the previous post). We need this reference to
 the next node because it can be anywhere in memory.&lt;/p&gt;
-&lt;div class="row"&gt;
-    &lt;div class="col-sm-12"&gt;
-        &lt;div class="thumbnail"&gt;
-            &lt;img src="https://lab137.org/img/singly-linked-list.svg"
-                 class="img-responsive align-center"
-                 alt="A link of nodes"
-                 title="A link of nodes"&gt;
-            &lt;div class="caption text-center"&gt;
-                A link of nodes. Image courtesy of
-                &lt;a href="https://commons.wikimedia.org/wiki/File:Singly-linked-list.svg"&gt;Lasindi&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
+&lt;p&gt;&lt;img alt="A link of nodes" src="https://lab137.org/img/singly-linked-list.svg"&gt;&lt;/p&gt;
 &lt;h3&gt;Using the Stack Interface&lt;/h3&gt;
 &lt;p&gt;In the previous article we created an interface for a stack. Now is the time to
 use it. The way that we're going to use it is by making our &lt;code&gt;LinkedStack&lt;/code&gt; class
@@ -1297,7 +1283,12 @@ created&lt;/li&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;In this article, we learned about nodes and the top node and we also
 implemented the &lt;code&gt;is_empty&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; methods. In the next article we'll finish
-implementing our &lt;code&gt;LinkedStack&lt;/code&gt; class by implementing the pop and peek methods.&lt;/p&gt;</content><category term="articles"></category><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry><entry><title>Building a Linked Stack: Part 1</title><link href="https://lab137.org/articles/building-a-linked-stack-part-1/" rel="alternate"></link><published>2019-06-12T12:00:00-07:00</published><updated>2019-06-12T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-1/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the first article in a multi-part series on the
+implementing our &lt;code&gt;LinkedStack&lt;/code&gt; class by implementing the pop and peek methods.&lt;/p&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;A link of nodes. Image courtesy of
+&lt;a href="https://commons.wikimedia.org/wiki/File:Singly-linked-list.svg"&gt;Lasindi&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="articles"></category><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry><entry><title>Building a Linked Stack: Part 1</title><link href="https://lab137.org/articles/building-a-linked-stack-part-1/" rel="alternate"></link><published>2019-06-12T12:00:00-07:00</published><updated>2019-06-12T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-1/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the first article in a multi-part series on the
 &lt;a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"&gt;stack data structure&lt;/a&gt;.
 This series defines what a stack is and what it does, then implement a
 link-based stack&lt;/em&gt;&lt;/p&gt;
@@ -1316,24 +1307,7 @@ removed.&lt;/p&gt;
 washing, every time you clean one plate you pull another off the top of the
 stack of dirty dishes. If someone wants to give you more dishes to wash they're
 going to put them on top of your stack.&lt;/p&gt;
-&lt;div class="row"&gt;
-    &lt;div class="col-sm-12"&gt;
-        &lt;div class="thumbnail"&gt;
-            &lt;img src="https://lab137.org/img/stack_of_plates.jpg"
-                class="img-responsive align-center"
-                alt="A stack of dirty dishes"
-                title="A stack of dirty dishes"&gt;
-            &lt;div class="caption text-center"&gt;
-                A stack of dirty dishes. Image courtesy of
-                &lt;a href="https://torange.biz"&gt;torange.biz&lt;/a&gt;,
-                &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;
-                    License CC-BY 4.0
-                &lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
+&lt;p&gt;&lt;img alt="A stack of dirty dishes" src="https://lab137.org/img/stack_of_plates.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;That's pretty much what the stack data structure is. It's an ordered collection
 of things (with the most recently added thing at the top) and you can perform
 certain  operations on it. You can&lt;/p&gt;
@@ -1395,23 +1369,7 @@ access an element of an array you use an index such as &lt;code&gt;arr[4]&lt;/co
 fifth element of the array (assuming zero indexing). This is actually an offset
 from the address of the first element in the array. This gives us quick and
 direct access to the data. This quick and direct access comes at a cost.&lt;/p&gt;
-&lt;div class="row"&gt;
-    &lt;div class="col-md-12"&gt;
-        &lt;div class="thumbnail"&gt;
-            &lt;img src="https://lab137.org/img/array.svg"
-                 class="img-responsive align-center"
-                 alt="A block of memory representing an array"
-                 title="A block of memory representing an array"&gt;
-            &lt;div class="caption text-center"&gt;
-                A block of memory representing an array. Image courtesy of
-                &lt;a href="https://commons.wikimedia.org/wiki/User:Jarkko_Piiroinen"&gt;
-                    Jarkko Piiroinen
-                &lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
+&lt;p&gt;&lt;img alt="A block of memory representing an array" src="https://lab137.org/img/array.svg"&gt;&lt;/p&gt;
 &lt;p&gt;When an array has data added to it and it is, extra memory must be allocated
 to make room for the data (and then some) and the data must be copied to the
 new memory location. This is one of the costs of using an array, the time that
@@ -1441,39 +1399,12 @@ that holds data and a reference to another node. If there is no other node,
 then that reference is &lt;code&gt;None&lt;/code&gt; in Python (or, &lt;code&gt;nullptr&lt;/code&gt; in C++). In the figure
 below, the left side of the node is the data and the right side is a reference
 to the next node indicated by an arrow.&lt;/p&gt;
-&lt;div class="row"&gt;
-    &lt;div class="col-sm-12"&gt;
-        &lt;div class="thumbnail"&gt;
-            &lt;img src="https://lab137.org/img/node_scoured.svg"
-                 class="img-responsive align-center"
-                 alt="A single node"
-                 title="A single node"&gt;
-            &lt;div class="caption text-center"&gt;
-                A single node.
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
+&lt;p&gt;&lt;img alt="A single node" src="https://lab137.org/img/node_scoured.svg"&gt;&lt;/p&gt;
 &lt;p&gt;A chain of nodes is shown in the figure below. The head consists of a head node
 and the nodes following it. The end of the chain is the block all the way to
 the right with an "X" in it. This "X" represents a reference to &lt;code&gt;None&lt;/code&gt; in
 Python (or &lt;code&gt;nullptr&lt;/code&gt; in C++) indicating the end of the chain.&lt;/p&gt;
-&lt;div class="row"&gt;
-    &lt;div class="col-sm-12"&gt;
-        &lt;div class="thumbnail"&gt;
-            &lt;img src="https://lab137.org/img/singly-linked-list.svg"
-                 class="img-responsive align-center"
-                 alt="A link of nodes"
-                 title="A link of nodes"&gt;
-            &lt;div class="caption text-center"&gt;
-                A link of nodes. Image courtesy of
-                &lt;a href="https://commons.wikimedia.org/wiki/File:Singly-linked-list.svg"&gt;Lasindi&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
+&lt;p&gt;&lt;img alt="A stack of dirty dishes" src="https://lab137.org/img/stack_of_plates.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Now, linked data structures aren't perfect and there will be some tradeoffs to
 using one versus using an array. First, they take more memory because they must
 contain a reference to the next node in each node in the chain. Second, they do
@@ -1566,4 +1497,11 @@ implementing the linked stack by implementing the &lt;code&gt;push&lt;/code&gt; 
 &lt;li&gt;&lt;a href="https://www.pearson.com/us/higher-education/product/Gaddis-Starting-Out-with-C-from-Control-Structures-to-Objects-8th-Edition/9780133769395.html"&gt;Starting out with C++: From Control Structure Through Objects, 8th Edition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://pymotw.com/3/abc/"&gt;PyMOTW 3: abc — Abstract Base Classes &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.robertelder.org/interfaces-most-important-software-engineering-concept/"&gt;Interfaces - The Most Important Software Engineering Concept&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Stack of dirty dishes. Image courtesy of &lt;a href="https://torange.biz"&gt;torange.biz&lt;/a&gt;,
+&lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;License CC-BY 4.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A block of memory representing an array. Image courtesy of
+&lt;a href="https://commons.wikimedia.org/wiki/User:Jarkko_Piiroinen"&gt;Jarkko Piiroinen&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</content><category term="articles"></category><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry></feed>

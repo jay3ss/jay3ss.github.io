@@ -96,24 +96,7 @@ removed.</p>
 washing, every time you clean one plate you pull another off the top of the
 stack of dirty dishes. If someone wants to give you more dishes to wash they're
 going to put them on top of your stack.</p>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="thumbnail">
-            <img src="https://lab137.org/img/stack_of_plates.jpg"
-                class="img-responsive align-center"
-                alt="A stack of dirty dishes"
-                title="A stack of dirty dishes">
-            <div class="caption text-center">
-                A stack of dirty dishes. Image courtesy of
-                <a href="https://torange.biz">torange.biz</a>,
-                <a href="https://creativecommons.org/licenses/by/4.0/">
-                    License CC-BY 4.0
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
+<p><img alt="A stack of dirty dishes" src="https://lab137.org/img/stack_of_plates.jpg"></p>
 <p>That's pretty much what the stack data structure is. It's an ordered collection
 of things (with the most recently added thing at the top) and you can perform
 certain  operations on it. You can</p>
@@ -175,23 +158,7 @@ access an element of an array you use an index such as <code>arr[4]</code> to ac
 fifth element of the array (assuming zero indexing). This is actually an offset
 from the address of the first element in the array. This gives us quick and
 direct access to the data. This quick and direct access comes at a cost.</p>
-<div class="row">
-    <div class="col-md-12">
-        <div class="thumbnail">
-            <img src="https://lab137.org/img/array.svg"
-                 class="img-responsive align-center"
-                 alt="A block of memory representing an array"
-                 title="A block of memory representing an array">
-            <div class="caption text-center">
-                A block of memory representing an array. Image courtesy of
-                <a href="https://commons.wikimedia.org/wiki/User:Jarkko_Piiroinen">
-                    Jarkko Piiroinen
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
+<p><img alt="A block of memory representing an array" src="https://lab137.org/img/array.svg"></p>
 <p>When an array has data added to it and it is, extra memory must be allocated
 to make room for the data (and then some) and the data must be copied to the
 new memory location. This is one of the costs of using an array, the time that
@@ -221,39 +188,12 @@ that holds data and a reference to another node. If there is no other node,
 then that reference is <code>None</code> in Python (or, <code>nullptr</code> in C++). In the figure
 below, the left side of the node is the data and the right side is a reference
 to the next node indicated by an arrow.</p>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="thumbnail">
-            <img src="https://lab137.org/img/node_scoured.svg"
-                 class="img-responsive align-center"
-                 alt="A single node"
-                 title="A single node">
-            <div class="caption text-center">
-                A single node.
-            </div>
-        </div>
-    </div>
-</div>
-
+<p><img alt="A single node" src="https://lab137.org/img/node_scoured.svg"></p>
 <p>A chain of nodes is shown in the figure below. The head consists of a head node
 and the nodes following it. The end of the chain is the block all the way to
 the right with an "X" in it. This "X" represents a reference to <code>None</code> in
 Python (or <code>nullptr</code> in C++) indicating the end of the chain.</p>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="thumbnail">
-            <img src="https://lab137.org/img/singly-linked-list.svg"
-                 class="img-responsive align-center"
-                 alt="A link of nodes"
-                 title="A link of nodes">
-            <div class="caption text-center">
-                A link of nodes. Image courtesy of
-                <a href="https://commons.wikimedia.org/wiki/File:Singly-linked-list.svg">Lasindi</a>
-            </div>
-        </div>
-    </div>
-</div>
-
+<p><img alt="A stack of dirty dishes" src="https://lab137.org/img/stack_of_plates.jpg"></p>
 <p>Now, linked data structures aren't perfect and there will be some tradeoffs to
 using one versus using an array. First, they take more memory because they must
 contain a reference to the next node in each node in the chain. Second, they do
@@ -346,6 +286,13 @@ implementing the linked stack by implementing the <code>push</code> method.</p>
 <li><a href="https://www.pearson.com/us/higher-education/product/Gaddis-Starting-Out-with-C-from-Control-Structures-to-Objects-8th-Edition/9780133769395.html">Starting out with C++: From Control Structure Through Objects, 8th Edition</a></li>
 <li><a href="https://pymotw.com/3/abc/">PyMOTW 3: abc — Abstract Base Classes </a></li>
 <li><a href="http://blog.robertelder.org/interfaces-most-important-software-engineering-concept/">Interfaces - The Most Important Software Engineering Concept</a></li>
+</ol>
+<h2>Resources</h2>
+<ol>
+<li>Stack of dirty dishes. Image courtesy of <a href="https://torange.biz">torange.biz</a>,
+<a href="https://creativecommons.org/licenses/by/4.0/">License CC-BY 4.0</a></li>
+<li>A block of memory representing an array. Image courtesy of
+<a href="https://commons.wikimedia.org/wiki/User:Jarkko_Piiroinen">Jarkko Piiroinen</a></li>
 </ol></div>
     <div class="comments">
       <h2>Comments !</h2>
