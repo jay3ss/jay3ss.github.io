@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/</loc>
-<lastmod>2019-07-19T19:44:43-00:00</lastmod>
+<lastmod>2019-12-17T18:34:20-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/tags.html</loc>
-<lastmod>2019-07-19T19:44:43-00:00</lastmod>
+<lastmod>2019-12-17T18:34:20-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/categories.html</loc>
-<lastmod>2019-07-19T19:44:43-00:00</lastmod>
+<lastmod>2019-12-17T18:34:20-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://lab137.org/pages/privacy-policy/</loc>
 <lastmod>2019-06-11T00:00:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/articles/how-to-print-on-the-same-line-with-python/</loc>
+<lastmod>2019-12-17T16:00:00-08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -75,7 +82,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/articles/</loc>
-<lastmod>2019-07-19T16:00:00-07:53</lastmod>
+<lastmod>2019-12-17T16:00:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/python/</loc>
+<lastmod>2019-12-17T16:00:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/print/</loc>
+<lastmod>2019-12-17T16:00:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -151,15 +172,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://lab137.org/tag/python/</loc>
-<lastmod>2019-06-12T12:02:00-07:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://lab137.org/author/jay-ess/</loc>
-<lastmod>2019-07-19T16:00:00-07:53</lastmod>
+<lastmod>2019-12-17T16:00:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

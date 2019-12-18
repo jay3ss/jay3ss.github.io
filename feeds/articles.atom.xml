@@ -1,5 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Lab137 - articles</title><link href="https://lab137.org/" rel="alternate"></link><link href="https://lab137.org/feeds/articles.atom.xml" rel="self"></link><id>https://lab137.org/</id><updated>2019-07-19T16:00:00-07:00</updated><entry><title>Simple Complex Number Algebra</title><link href="https://lab137.org/articles/simple-complex-number-algebra/" rel="alternate"></link><published>2019-07-19T16:00:00-07:00</published><updated>2019-07-19T16:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-07-19:/articles/simple-complex-number-algebra/</id><summary type="html">&lt;p&gt;I decided to start reviewing some of my controls courses from university to
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lab137 - articles</title><link href="https://lab137.org/" rel="alternate"></link><link href="https://lab137.org/feeds/articles.atom.xml" rel="self"></link><id>https://lab137.org/</id><updated>2019-12-17T16:00:00-08:00</updated><entry><title>How to Print on the Same Line with Python</title><link href="https://lab137.org/articles/how-to-print-on-the-same-line-with-python/" rel="alternate"></link><published>2019-12-17T16:00:00-08:00</published><updated>2019-12-17T16:00:00-08:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-12-17:/articles/how-to-print-on-the-same-line-with-python/</id><summary type="html">&lt;p&gt;Today, I was downloading about 1,600 images and wanted to be able to keep track
+of how many images I had downloaded so far and what image that I was currently
+downloading. This is typically very easy with Python, but I decided to print
+everything on the same line …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today, I was downloading about 1,600 images and wanted to be able to keep track
+of how many images I had downloaded so far and what image that I was currently
+downloading. This is typically very easy with Python, but I decided to print
+everything on the same line so that I my terminal wouldn't get cluttered with
+&lt;code&gt;print&lt;/code&gt; statements. This is where I encountered my issue.&lt;/p&gt;
+&lt;p&gt;The format of the string that I was printing started out as&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="s1"&gt;Image&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="si"&gt;{count}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;where&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\r&lt;/code&gt;: is the carriage return which resets the line position to the beginning
+of the line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;count&lt;/code&gt;: the number of the image that I was downloading&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;end&lt;/code&gt;: the character that &lt;code&gt;print&lt;/code&gt; will append to the string that it's printing&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;flush&lt;/code&gt;: tells &lt;code&gt;print&lt;/code&gt; whether or not it should forcibly flush the stream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Basically, what's going to happen is that when the string is printed it will
+print the string and put the cursor back at the beginning of the line. If this
+where done in a loop (probably using &lt;code&gt;time.sleep&lt;/code&gt; too), then you'd get the
+effect of the one line counting up. Neat!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="s1"&gt;Count&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="si"&gt;{count}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.01&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We can put this into a function to make it a little easier to read&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;print_same_line&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In the function above, we need to use the &lt;code&gt;sep&lt;/code&gt; keyword so that when we use
+this function a space isn't added between the &lt;code&gt;\r&lt;/code&gt; character and our string
+causing an offset. Now we can use a loop like above and have our code be a bit
+more readable (we also don't need the &lt;code&gt;\r&lt;/code&gt; character at the beginning of our
+string).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;print_same_line&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Count&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="si"&gt;{count}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.01&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This worked pretty great, but I encountered trouble when I was reading URLs
+from a file and was printing them to the terminal.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib.request&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;request&lt;/span&gt;
+
+&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pathlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;SLEEP&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt; &lt;span class="c1"&gt;# seconds&lt;/span&gt;
+&lt;span class="n"&gt;urls_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;images.txt&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;urls_file&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;urls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;urls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Image&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()])&lt;/span&gt;
+        &lt;span class="n"&gt;print_same_line&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;fname&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlretrieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SLEEP&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;Done! Downloaded &lt;/span&gt;&lt;span class="si"&gt;{count}&lt;/span&gt;&lt;span class="s1"&gt; images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;which resulted in the unexpected output of&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Image   &lt;span class="m"&gt;1&lt;/span&gt;   https://example.com/image-1.jpg
+Image   &lt;span class="m"&gt;2&lt;/span&gt;   https://example.com/image-2.jpg
+Image   &lt;span class="m"&gt;3&lt;/span&gt;   https://example.com/image-3.jpg
+Image   &lt;span class="m"&gt;4&lt;/span&gt;   https://example.com/image-4.jpg
+Image   &lt;span class="m"&gt;5&lt;/span&gt;   https://example.com/image-5.jpg
+Image   &lt;span class="m"&gt;6&lt;/span&gt;   https://example.com/image-6.jpg
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It took me longer than I'd like to admit to figure out what went wrong. If you
+look at the line where I grab the file name (&lt;code&gt;fname&lt;/code&gt;) from the URL, you'll see
+that I call the &lt;code&gt;strip&lt;/code&gt; method. Why? Each line of the file had a &lt;code&gt;\n&lt;/code&gt; character
+at the end of it. Even though I did it for the file name I &lt;strong&gt;did&lt;/strong&gt; not do it
+for the printing of the URL. This one little mistake cost me probably 90 to 120
+minutes...&lt;/p&gt;
+&lt;p&gt;Once I fixed it, however, it worked like a charm. Below is the fixed example&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib.request&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;request&lt;/span&gt;
+
+
+&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pathlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;SLEEP&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt; &lt;span class="c1"&gt;# seconds&lt;/span&gt;
+&lt;span class="n"&gt;urls_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;images.txt&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;urls_file&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;urls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;urls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;print_same_line&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Image&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;{count+1}&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="si"&gt;{url}&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;fname&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlretrieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SLEEP&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;Done! Downloaded &lt;/span&gt;&lt;span class="si"&gt;{count}&lt;/span&gt;&lt;span class="s1"&gt; images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="articles"></category><category term="python"></category><category term="print"></category></entry><entry><title>Simple Complex Number Algebra</title><link href="https://lab137.org/articles/simple-complex-number-algebra/" rel="alternate"></link><published>2019-07-19T16:00:00-07:00</published><updated>2019-07-19T16:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-07-19:/articles/simple-complex-number-algebra/</id><summary type="html">&lt;p&gt;I decided to start reviewing some of my controls courses from university to
 brush up on the fundamentals. While reviewing, I had an "Oh shit" moment when I
 realized that I've forgotten some &lt;em&gt;really&lt;/em&gt; basic math. Namely, working with
 complex numbers. I decided to write this article so that I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I decided to start reviewing some of my controls courses from university to
@@ -146,8 +262,7 @@ table below shows you exactly how to find this out.&lt;/p&gt;
     to stop rendering in the table
 --&gt;
 
-&lt;p&gt;&lt;div class="table-responsive"&gt;
-  &lt;table class="table"&gt;
+&lt;p&gt;&lt;table class="table is-fullwidth"&gt;
     &lt;thead&gt;
       &lt;tr&gt;
         &lt;th&gt;Conditions&lt;/th&gt;
@@ -177,8 +292,7 @@ table below shows you exactly how to find this out.&lt;/p&gt;
           &lt;td&gt;270° &lt;span class="math"&gt;\(\lt \phi \lt\)&lt;/span&gt; 360°&lt;/td&gt;
         &lt;/tr&gt;
       &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;&lt;/p&gt;
+  &lt;/table&gt;&lt;/p&gt;
 &lt;p&gt;Once you know what quadrant the complex number is in, then finding the phase
 angle is pretty straightforward. Below I've created another table that lists
 the formula that you need to use to find the (numerical) phase angle dependent
@@ -188,8 +302,7 @@ on the quadrant.&lt;/p&gt;
     to stop rendering in the table
 --&gt;
 
-&lt;p&gt;&lt;div class="table-responsive" id="quadrants"&gt;
-  &lt;table class="table"&gt;
+&lt;p&gt;&lt;table class="tabl table is-fullwidth"&gt;
     &lt;thead&gt;
       &lt;tr&gt;
         &lt;th&gt;Quadrant&lt;/th&gt;
@@ -214,8 +327,7 @@ on the quadrant.&lt;/p&gt;
           &lt;td&gt;&lt;span class="math"&gt;\(\phi = -\tan^{-1}{\frac{\left|b\right|}{a}}\)&lt;/span&gt;&lt;/td&gt;
         &lt;/tr&gt;
       &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;&lt;/p&gt;
+  &lt;/table&gt;&lt;/p&gt;
 &lt;h4&gt;Example&lt;/h4&gt;
 &lt;p&gt;Let's convert &lt;span class="math"&gt;\(z = \pm 3 \pm j3\)&lt;/span&gt; to polar form.&lt;/p&gt;
 &lt;h5&gt;First Quadrant&lt;/h5&gt;
@@ -464,7 +576,7 @@ please comment below.&lt;/p&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="complex numbers"></category><category term="math"></category><category term="algebra"></category><category term="complex conjugate"></category><category term="imaginary numbers"></category></entry><entry><title>C++: Simple Structs Usage</title><link href="https://lab137.org/articles/c-simple-structs-usage/" rel="alternate"></link><published>2019-06-19T12:00:00-07:00</published><updated>2019-06-19T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-19:/articles/c-simple-structs-usage/</id><summary type="html">&lt;p&gt;Similar to arrays, structs allow you to hold a group of data. structs allow
+&lt;/script&gt;</content><category term="articles"></category><category term="complex numbers"></category><category term="math"></category><category term="algebra"></category><category term="complex conjugate"></category><category term="imaginary numbers"></category></entry><entry><title>C++: Simple Structs Usage</title><link href="https://lab137.org/articles/c-simple-structs-usage/" rel="alternate"></link><published>2019-06-19T12:00:00-07:00</published><updated>2019-06-19T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-19:/articles/c-simple-structs-usage/</id><summary type="html">&lt;p&gt;Similar to arrays, structs allow you to hold a group of data. structs allow
 you to group together related members that would be awkwardly expressed as
 multiple arrays (e.g., the x- and y-coordinates of a pixel or the name,
 address, and telephone number of a person) into one convenient …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Similar to arrays, structs allow you to hold a group of data. structs allow
@@ -721,7 +833,7 @@ programs!&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://www.pearson.com/us/higher-education/product/Gaddis-Starting-Out-with-C-from-Control-Structures-to-Objects-8th-Edition/9780133769395.html"&gt;Starting out with C++: From Control Structure Through Objects, 8th Edition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.cprogramming.com/tutorial/lesson7.html"&gt;Structures in C++ - Tutorial - Cprogramming.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="C++"></category><category term="struct"></category><category term="beginner"></category></entry><entry><title>Building a Linked Stack: Part 3</title><link href="https://lab137.org/articles/building-a-linked-stack-part-3/" rel="alternate"></link><published>2019-06-12T12:02:00-07:00</published><updated>2019-06-12T12:02:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-3/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the third article in a multi-part series on the
+&lt;/ol&gt;</content><category term="articles"></category><category term="C++"></category><category term="struct"></category><category term="beginner"></category></entry><entry><title>Building a Linked Stack: Part 3</title><link href="https://lab137.org/articles/building-a-linked-stack-part-3/" rel="alternate"></link><published>2019-06-12T12:02:00-07:00</published><updated>2019-06-12T12:02:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-3/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the third article in a multi-part series on the
 &lt;a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"&gt;stack data structure&lt;/a&gt;.
 This series defines what a stack is and what it does, then implements a
 link-based stack&lt;/em&gt;&lt;/p&gt;
@@ -742,11 +854,11 @@ a look at what we have at the moment&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;LinkedStack&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;StackInterface&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Defines a link-based stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Determines if the stack is empty&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Adds a new entry to the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
@@ -757,7 +869,7 @@ a look at what we have at the moment&lt;/p&gt;
             &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;
 
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -777,7 +889,7 @@ immediately return &lt;code&gt;False&lt;/code&gt; if it is.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Removes the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -785,7 +897,7 @@ immediately return &lt;code&gt;False&lt;/code&gt; if it is.&lt;/p&gt;
 we can do that is to advance the reference to the top node and then return
 &lt;code&gt;True&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt;
-&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -793,10 +905,10 @@ we can do that is to advance the reference to the top node and then return
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Removes the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 
     &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -844,7 +956,7 @@ working on &lt;code&gt;peek&lt;/code&gt;. Just like &lt;code&gt;pop&lt;/code&gt;
 if it is, raise an &lt;code&gt;EmptyException&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Returns the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;EmptyException&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Stack is empty&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
@@ -883,23 +995,23 @@ which will&lt;/p&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;StackInterface&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ABC&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;An abstract base class that defines a stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Determines if the stack is empty&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Returns the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Removes the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Adds data to the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Adds a new entry to the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
@@ -913,11 +1025,11 @@ which will&lt;/p&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;LinkedStack&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;StackInterface&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Defines a link-based stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Determines if the stack is empty&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Returns the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
@@ -944,7 +1056,7 @@ which will&lt;/p&gt;
             &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;
 
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__repr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;nodes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
@@ -960,7 +1072,7 @@ which will&lt;/p&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;A node in a chain&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;
 
@@ -989,10 +1101,10 @@ can make sure we've met our specifications. As a recap, here they are&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LinkedStack&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
@@ -1003,7 +1115,7 @@ can make sure we've met our specifications. As a recap, here they are&lt;/p&gt;
 
 &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="n"&gt;a54ea098db0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
      &lt;span class="mi"&gt;11&lt;/span&gt;         &lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;Returns the top of the stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-     &lt;span class="mi"&gt;12&lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+     &lt;span class="mi"&gt;12&lt;/span&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;span class="o"&gt;---&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;             &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;EmptyException&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Stack is empty&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
      &lt;span class="mi"&gt;14&lt;/span&gt;
      &lt;span class="mi"&gt;15&lt;/span&gt;         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
@@ -1011,22 +1123,22 @@ can make sure we've met our specifications. As a recap, here they are&lt;/p&gt;
 &lt;span class="n"&gt;EmptyException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Stack&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;empty&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
@@ -1040,7 +1152,7 @@ nice story (i.e., we won't get killed with this code, hopefully).&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;In this article, we learned about nodes and the top node and we also
 implemented the &lt;code&gt;is_empty&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; methods. In the next article we'll finish
-implementing our &lt;code&gt;LinkedStack&lt;/code&gt; class by implementing the pop and peek methods.&lt;/p&gt;</content><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry><entry><title>Building a Linked Stack: Part 2</title><link href="https://lab137.org/articles/building-a-linked-stack-part-2/" rel="alternate"></link><published>2019-06-12T12:01:00-07:00</published><updated>2019-06-12T12:01:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-2/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the second article in a multi-part series on the
+implementing our &lt;code&gt;LinkedStack&lt;/code&gt; class by implementing the pop and peek methods.&lt;/p&gt;</content><category term="articles"></category><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry><entry><title>Building a Linked Stack: Part 2</title><link href="https://lab137.org/articles/building-a-linked-stack-part-2/" rel="alternate"></link><published>2019-06-12T12:01:00-07:00</published><updated>2019-06-12T12:01:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-2/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the second article in a multi-part series on the
 &lt;a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"&gt;stack data structure&lt;/a&gt;.
 This series defines what a stack is and what it does, then implements a
 link-based stack&lt;/em&gt;&lt;/p&gt;
@@ -1105,7 +1217,7 @@ make our lives easier.&lt;/p&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Node&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;A node in a chain&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;
 
@@ -1136,7 +1248,7 @@ is the top node. As you can see, most of the action is happening at the top of
 the chain.&lt;/p&gt;
 &lt;p&gt;Our &lt;code&gt;__init__&lt;/code&gt; method ends up being&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1146,7 +1258,7 @@ implement a method that determines if the stack is empty or not. An easy way to
 do that is to check if the top node is &lt;code&gt;None&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Determines if the stack is empty&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1178,14 +1290,14 @@ created&lt;/li&gt;
         &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;
 
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;In this article, we learned about nodes and the top node and we also
 implemented the &lt;code&gt;is_empty&lt;/code&gt; and &lt;code&gt;push&lt;/code&gt; methods. In the next article we'll finish
-implementing our &lt;code&gt;LinkedStack&lt;/code&gt; class by implementing the pop and peek methods.&lt;/p&gt;</content><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry><entry><title>Building a Linked Stack: Part 1</title><link href="https://lab137.org/articles/building-a-linked-stack-part-1/" rel="alternate"></link><published>2019-06-12T12:00:00-07:00</published><updated>2019-06-12T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-1/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the first article in a multi-part series on the
+implementing our &lt;code&gt;LinkedStack&lt;/code&gt; class by implementing the pop and peek methods.&lt;/p&gt;</content><category term="articles"></category><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry><entry><title>Building a Linked Stack: Part 1</title><link href="https://lab137.org/articles/building-a-linked-stack-part-1/" rel="alternate"></link><published>2019-06-12T12:00:00-07:00</published><updated>2019-06-12T12:00:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-06-12:/articles/building-a-linked-stack-part-1/</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the first article in a multi-part series on the
 &lt;a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"&gt;stack data structure&lt;/a&gt;.
 This series defines what a stack is and what it does, then implement a
 link-based stack&lt;/em&gt;&lt;/p&gt;
@@ -1395,14 +1507,14 @@ on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;StackInterface&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ABC&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;An abstract base class that defines a stack&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Determines if the stack is empty&lt;/span&gt;
 &lt;span class="sd"&gt;        :return True if the stack is empty, False otherwise&lt;/span&gt;
 &lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
         &lt;span class="k"&gt;pass&lt;/span&gt;
 
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;peek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Returns the top of the stack&lt;/span&gt;
 &lt;span class="sd"&gt;        :pre The stack isn&amp;#39;t empty&lt;/span&gt;
@@ -1410,7 +1522,7 @@ on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
         &lt;span class="k"&gt;pass&lt;/span&gt;
 
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Removes the entry from the top of the stack&lt;/span&gt;
 &lt;span class="sd"&gt;        :post The entry at the top of the stack will be removed, if possible&lt;/span&gt;
@@ -1418,7 +1530,7 @@ on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
         &lt;span class="k"&gt;pass&lt;/span&gt;
 
-    &lt;span class="nd"&gt;@abc.abstractmethod&lt;/span&gt;
+    &lt;span class="nd"&gt;@abc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abstractmethod&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;entry&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Adds an entry to the top of the stack&lt;/span&gt;
 &lt;span class="sd"&gt;        :post The entry will be added to the top of the stack, if possible&lt;/span&gt;
@@ -1454,4 +1566,4 @@ implementing the linked stack by implementing the &lt;code&gt;push&lt;/code&gt; 
 &lt;li&gt;&lt;a href="https://www.pearson.com/us/higher-education/product/Gaddis-Starting-Out-with-C-from-Control-Structures-to-Objects-8th-Edition/9780133769395.html"&gt;Starting out with C++: From Control Structure Through Objects, 8th Edition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://pymotw.com/3/abc/"&gt;PyMOTW 3: abc — Abstract Base Classes &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.robertelder.org/interfaces-most-important-software-engineering-concept/"&gt;Interfaces - The Most Important Software Engineering Concept&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry></feed>
+&lt;/ol&gt;</content><category term="articles"></category><category term="data structure"></category><category term="stack"></category><category term="Python"></category></entry></feed>
