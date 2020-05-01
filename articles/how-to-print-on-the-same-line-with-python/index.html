@@ -83,7 +83,7 @@ downloading. This is typically very easy with Python, but I decided to print
 everything on the same line so that I my terminal wouldn't get cluttered with
 <code>print</code> statements. This is where I encountered my issue.</p>
 <p>The format of the string that I was printing started out as</p>
-<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Image</span><span class="se">\t</span><span class="si">{count}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Image</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 
@@ -102,7 +102,7 @@ effect of the one line counting up. Neat!</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Count</span><span class="se">\t</span><span class="si">{count}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Count</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
 </pre></div>
 
@@ -121,7 +121,7 @@ string).</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">print_same_line</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count</span><span class="se">\t</span><span class="si">{count}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">print_same_line</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
 </pre></div>
 
@@ -147,7 +147,7 @@ from a file and was printing them to the terminal.</p>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">SLEEP</span><span class="p">)</span>
 
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Downloaded </span><span class="si">{count}</span><span class="s1"> images&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Downloaded </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> images&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -181,7 +181,7 @@ minutes...</p>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">urls_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">urls</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
         <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">print_same_line</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Image</span><span class="se">\t</span><span class="s1">{count+1}</span><span class="se">\t</span><span class="si">{url}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">print_same_line</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Image</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
         <span class="n">fname</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="o">/</span><span class="n">fname</span><span class="p">)</span>
@@ -189,7 +189,7 @@ minutes...</p>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">SLEEP</span><span class="p">)</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Downloaded </span><span class="si">{count}</span><span class="s1"> images&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Downloaded </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> images&#39;</span><span class="p">)</span>
 </pre></div></div>
     <div class="comments">
       <h2>Comments !</h2>
