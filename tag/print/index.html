@@ -156,7 +156,7 @@ Image   <span class="m">6</span>   https://example.com/image-6.jpg
 <p>It took me longer than I'd like to admit to figure out what went wrong. If you
 look at the line where I grab the file name (<code>fname</code>) from the URL, you'll see
 that I call the <code>strip</code> method. Why? Each line of the file had a <code>\n</code> character
-at the end of it. Even though I did it for the file name I <strong>did</strong> not do it
+at the end of it. Even though I did it for the file name I <strong>did not</strong> do it
 for the printing of the URL. This one little mistake cost me probably 90 to 120
 minutes...</p>
 <p>Once I fixed it, however, it worked like a charm. Below is the fixed example</p>

@@ -101,7 +101,7 @@ Image   &lt;span class="m"&gt;6&lt;/span&gt;   https://example.com/image-6.jpg
 &lt;p&gt;It took me longer than I'd like to admit to figure out what went wrong. If you
 look at the line where I grab the file name (&lt;code&gt;fname&lt;/code&gt;) from the URL, you'll see
 that I call the &lt;code&gt;strip&lt;/code&gt; method. Why? Each line of the file had a &lt;code&gt;\n&lt;/code&gt; character
-at the end of it. Even though I did it for the file name I &lt;strong&gt;did&lt;/strong&gt; not do it
+at the end of it. Even though I did it for the file name I &lt;strong&gt;did not&lt;/strong&gt; do it
 for the printing of the URL. This one little mistake cost me probably 90 to 120
 minutes...&lt;/p&gt;
 &lt;p&gt;Once I fixed it, however, it worked like a charm. Below is the fixed example&lt;/p&gt;
