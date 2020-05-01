@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/</loc>
-<lastmod>2020-05-01T15:49:44-00:00</lastmod>
+<lastmod>2020-05-01T15:51:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/tags.html</loc>
-<lastmod>2020-05-01T15:49:44-00:00</lastmod>
+<lastmod>2020-05-01T15:51:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/categories.html</loc>
-<lastmod>2020-05-01T15:49:44-00:00</lastmod>
+<lastmod>2020-05-01T15:51:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -47,7 +47,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/articles/how-to-print-on-the-same-line-with-python/</loc>
-<lastmod>2019-12-17T16:00:00-08:00</lastmod>
+<lastmod>2020-05-01T15:51:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -89,7 +89,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/articles/</loc>
-<lastmod>2020-05-01T14:26:00-07:53</lastmod>
+<lastmod>2020-05-01T15:51:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -131,14 +131,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/tag/python/</loc>
-<lastmod>2019-12-17T16:00:00-07:53</lastmod>
+<lastmod>2020-05-01T15:51:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/tag/print/</loc>
-<lastmod>2019-12-17T16:00:00-07:53</lastmod>
+<lastmod>2020-05-01T15:51:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -215,7 +215,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/author/jay-ess/</loc>
-<lastmod>2020-05-01T14:26:00-07:53</lastmod>
+<lastmod>2020-05-01T15:51:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
