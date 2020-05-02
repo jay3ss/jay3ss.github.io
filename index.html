@@ -48,11 +48,11 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/">Converting a PowerPoint PPT to a PDF File</a>
+            <a href="https://lab137.org/articles/using-ssh-with-git-repositories/">Using SSH with Git Repositories</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2020-05-01T14:26:00-07:00">
-    Published <span class="is-info">May 01, 2020</span>
+  <abbr class="published" title="2020-05-02T15:11:00-07:00">
+    Published <span class="is-info">May 02, 2020</span>
     in <a href="https://lab137.org/articles/">articles</a>
   </abbr>
 
@@ -60,31 +60,35 @@
       <em>by           <a class="url fn" href="https://lab137.org/author/jay-ess/">Jay Ess</a>
 </em>
       <span class="tag is-small is-rounded">
-        <a href="https://lab137.org/tag/ppt/">ppt</a>
-      </span>
-      <span class="tag is-small is-rounded">
-        <a href="https://lab137.org/tag/powerpoint/">powerpoint</a>
-      </span>
-      <span class="tag is-small is-rounded">
         <a href="https://lab137.org/tag/til/">til</a>
       </span>
       <span class="tag is-small is-rounded">
-        <a href="https://lab137.org/tag/pdf/">pdf</a>
+        <a href="https://lab137.org/tag/git/">git</a>
       </span>
       <span class="tag is-small is-rounded">
-        <a href="https://lab137.org/tag/convert/">convert</a>
+        <a href="https://lab137.org/tag/ssh/">ssh</a>
       </span>
     </p>
   
 </footer>          <div class="section">
-            <p>I'm currently taking an online class and the professor gives out PowerPoint
-slides as part of his lecture. I don't like the LibreOffice version of
-PowerPoint (Impress) and prefer to use PDF files. So, I found a simple
-one-liner from <a href="https://askubuntu.com/a/104484">Ask Ubuntu</a> that's worked well
-so far.</p>
-<div class="highlight"><pre><span></span><span class="err">libreoffice --headless --invisible --convert-to pdf *.ppt</span>
+            <p>If you've setup your <a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">git account to use
+SSH</a>,
+then should be pretty straightforward. My usual workflow was to <code>git clone</code> the
+URL of the repository, but I decided to use SSH instead because I was annoyed
+with having to always enter my credentials. This is how to do it.</p>
+<p><em>Note</em>:For the most part, I use GitHub but just replace <code>github.com</code> with
+whatever service you're using.</p>
+<h2>Cloning a Repository</h2>
+<div class="highlight"><pre><span></span><span class="err">git clone git@github.com:&lt;username&gt;/&lt;reponame&gt;.git</span>
 </pre></div>
-<p><a href="https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/#disqus_thread"></a></p>          </div>
+
+
+<h2>Changing the Remote to Use SSH</h2>
+<p>If you've already cloned a repo without using SSH, then you can <a href="https://stackoverflow.com/a/11201143/3562890">modify the
+branch to use SSH</a></p>
+<div class="highlight"><pre><span></span><span class="err">git remote set-url origin git@github.com:&lt;username&gt;/&lt;reponame&gt;.git</span>
+</pre></div>
+<p><a href="https://lab137.org/articles/using-ssh-with-git-repositories/#disqus_thread"></a></p>          </div>
         </article>
       </aside>
   <div class="is-hidden-print">
@@ -93,12 +97,12 @@ so far.</p>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
-              <a href="https://lab137.org/articles/using-ssh-with-git-repositories/">
-                <h3 class="title is-5">Using SSH with Git Repositories</h3>
+              <a href="https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/">
+                <h3 class="title is-5">Converting a PowerPoint PPT to a PDF File</h3>
                 <div class="heading subtitle">May 01, 2020</div>
-                <div><p>If you've setup your git account to use SSH, then should be pretty straightforward. My usual workflow was to...<br /></p></div>
+                <div><p>I'm currently taking an online class and the professor gives out PowerPoint slides as part of his lecture. I...<br /></p></div>
               </a>
-<p><a href="https://lab137.org/articles/using-ssh-with-git-repositories/#disqus_thread"></a></p>            </div>
+<p><a href="https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/#disqus_thread"></a></p>            </div>
           </div>
         </div>
         <div class="column is-half-tablet is-one-third-desktop">

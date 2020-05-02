@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Lab137</title><link href="https://lab137.org/" rel="alternate"></link><link href="https://lab137.org/feeds/all.atom.xml" rel="self"></link><id>https://lab137.org/</id><updated>2020-05-01T15:51:00-07:00</updated><entry><title>Converting a PowerPoint PPT to a PDF File</title><link href="https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/" rel="alternate"></link><published>2020-05-01T14:26:00-07:00</published><updated>2020-05-01T14:26:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2020-05-01:/articles/converting-a-powerpoint-ppt-to-a-pdf-file/</id><summary type="html">&lt;p&gt;I'm currently taking an online class and the professor gives out PowerPoint
-slides as part of his lecture. I don't like the LibreOffice version of
-PowerPoint (Impress) and prefer to use PDF files. So, I found a simple
-one-liner from &lt;a href="https://askubuntu.com/a/104484"&gt;Ask Ubuntu&lt;/a&gt; that's worked well
-so far.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;libreoffice --headless --invisible …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I'm currently taking an online class and the professor gives out PowerPoint
-slides as part of his lecture. I don't like the LibreOffice version of
-PowerPoint (Impress) and prefer to use PDF files. So, I found a simple
-one-liner from &lt;a href="https://askubuntu.com/a/104484"&gt;Ask Ubuntu&lt;/a&gt; that's worked well
-so far.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;libreoffice --headless --invisible --convert-to pdf *.ppt&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="articles"></category><category term="ppt"></category><category term="powerpoint"></category><category term="til"></category><category term="pdf"></category><category term="convert"></category></entry><entry><title>Using SSH with Git Repositories</title><link href="https://lab137.org/articles/using-ssh-with-git-repositories/" rel="alternate"></link><published>2020-05-01T14:26:00-07:00</published><updated>2020-05-01T14:26:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2020-05-01:/articles/using-ssh-with-git-repositories/</id><summary type="html">&lt;p&gt;If you've setup your &lt;a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh"&gt;git account to use
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lab137</title><link href="https://lab137.org/" rel="alternate"></link><link href="https://lab137.org/feeds/all.atom.xml" rel="self"></link><id>https://lab137.org/</id><updated>2020-05-02T15:11:00-07:00</updated><entry><title>Using SSH with Git Repositories</title><link href="https://lab137.org/articles/using-ssh-with-git-repositories/" rel="alternate"></link><published>2020-05-02T15:11:00-07:00</published><updated>2020-05-02T15:11:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2020-05-02:/articles/using-ssh-with-git-repositories/</id><summary type="html">&lt;p&gt;If you've setup your &lt;a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh"&gt;git account to use
 SSH&lt;/a&gt;,
 then should be pretty straightforward. My usual workflow was to &lt;code&gt;git clone&lt;/code&gt; the
 URL of the repository, but I decided to use SSH instead because I was annoyed
@@ -30,7 +19,18 @@ whatever service you're using.&lt;/p&gt;
 &lt;p&gt;If you've already cloned a repo without using SSH, then you can &lt;a href="https://stackoverflow.com/a/11201143/3562890"&gt;modify the
 branch to use SSH&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;git remote set-url origin git@github.com:&amp;lt;username&amp;gt;/&amp;lt;reponame&amp;gt;.git&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="articles"></category><category term="til"></category><category term="git"></category><category term="ssh"></category></entry><entry><title>How to Print on the Same Line with Python</title><link href="https://lab137.org/articles/how-to-print-on-the-same-line-with-python/" rel="alternate"></link><published>2019-12-17T16:00:00-08:00</published><updated>2020-05-01T15:51:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-12-17:/articles/how-to-print-on-the-same-line-with-python/</id><summary type="html">&lt;p&gt;Today, I was downloading about 1,600 images and wanted to be able to keep track
+&lt;/pre&gt;&lt;/div&gt;</content><category term="articles"></category><category term="til"></category><category term="git"></category><category term="ssh"></category></entry><entry><title>Converting a PowerPoint PPT to a PDF File</title><link href="https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/" rel="alternate"></link><published>2020-05-01T14:26:00-07:00</published><updated>2020-05-01T14:26:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2020-05-01:/articles/converting-a-powerpoint-ppt-to-a-pdf-file/</id><summary type="html">&lt;p&gt;I'm currently taking an online class and the professor gives out PowerPoint
+slides as part of his lecture. I don't like the LibreOffice version of
+PowerPoint (Impress) and prefer to use PDF files. So, I found a simple
+one-liner from &lt;a href="https://askubuntu.com/a/104484"&gt;Ask Ubuntu&lt;/a&gt; that's worked well
+so far.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;libreoffice --headless --invisible …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I'm currently taking an online class and the professor gives out PowerPoint
+slides as part of his lecture. I don't like the LibreOffice version of
+PowerPoint (Impress) and prefer to use PDF files. So, I found a simple
+one-liner from &lt;a href="https://askubuntu.com/a/104484"&gt;Ask Ubuntu&lt;/a&gt; that's worked well
+so far.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;libreoffice --headless --invisible --convert-to pdf *.ppt&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="articles"></category><category term="ppt"></category><category term="powerpoint"></category><category term="til"></category><category term="pdf"></category><category term="convert"></category></entry><entry><title>How to Print on the Same Line with Python</title><link href="https://lab137.org/articles/how-to-print-on-the-same-line-with-python/" rel="alternate"></link><published>2019-12-17T16:00:00-08:00</published><updated>2020-05-01T15:51:00-07:00</updated><author><name>Jay Ess</name></author><id>tag:lab137.org,2019-12-17:/articles/how-to-print-on-the-same-line-with-python/</id><summary type="html">&lt;p&gt;Today, I was downloading about 1,600 images and wanted to be able to keep track
 of how many images I had downloaded so far and what image that I was currently
 downloading. This is typically very easy with Python, but I decided to print
 everything on the same line …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today, I was downloading about 1,600 images and wanted to be able to keep track

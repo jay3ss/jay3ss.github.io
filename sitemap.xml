@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/</loc>
-<lastmod>2020-05-02T15:10:32-00:00</lastmod>
+<lastmod>2020-05-02T15:12:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/tags.html</loc>
-<lastmod>2020-05-02T15:10:32-00:00</lastmod>
+<lastmod>2020-05-02T15:12:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://lab137.org/categories.html</loc>
-<lastmod>2020-05-02T15:10:32-00:00</lastmod>
+<lastmod>2020-05-02T15:12:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,14 +39,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/</loc>
-<lastmod>2020-05-01T14:26:00-07:00</lastmod>
+<loc>https://lab137.org/articles/using-ssh-with-git-repositories/</loc>
+<lastmod>2020-05-02T15:11:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://lab137.org/articles/using-ssh-with-git-repositories/</loc>
+<loc>https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/</loc>
 <lastmod>2020-05-01T14:26:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -96,7 +96,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/articles/</loc>
-<lastmod>2020-05-01T15:51:00-07:53</lastmod>
+<lastmod>2020-05-02T15:11:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/til/</loc>
+<lastmod>2020-05-02T15:11:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/git/</loc>
+<lastmod>2020-05-02T15:11:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://lab137.org/tag/ssh/</loc>
+<lastmod>2020-05-02T15:11:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -116,13 +137,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://lab137.org/tag/til/</loc>
-<lastmod>2020-05-01T14:26:00-07:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://lab137.org/tag/pdf/</loc>
 <lastmod>2020-05-01T14:26:00-07:53</lastmod>
 <changefreq>daily</changefreq>
@@ -131,20 +145,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/tag/convert/</loc>
-<lastmod>2020-05-01T14:26:00-07:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://lab137.org/tag/git/</loc>
-<lastmod>2020-05-01T14:26:00-07:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://lab137.org/tag/ssh/</loc>
 <lastmod>2020-05-01T14:26:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -236,7 +236,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://lab137.org/author/jay-ess/</loc>
-<lastmod>2020-05-01T15:51:00-07:53</lastmod>
+<lastmod>2020-05-02T15:11:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
