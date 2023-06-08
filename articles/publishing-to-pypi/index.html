@@ -3,12 +3,24 @@
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width">
-  <title>Lab137</title>
+  <title>Publishing to PyPI</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://lab137.org/theme/webassets-external/46d881e6c501c98655e77a7722a6ac98_main.css">
   <style media="print">.is-hidden-print{display:none !important}</style>
       <link rel="stylesheet" href="https://lab137.org/css/custom.css">
+<meta property="og:title" content="Lab137 - Publishing to PyPI">
+  <meta property="og:description" content="NOTE: I don't do this very often so there could be a lot of incorrect information in this post. I'm mainly writing this for myself for future reference. But, if someone else finds this useful then...">
+<meta property="og:url" content="https://lab137.org/articles/publishing-to-pypi/">
+<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="Lab137">
+<meta property="og:type" content="article">
+  <meta property="article:published_time" content="2023-06-07T11:54:00-07:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="publishing">
+    <meta property="article:tag" content="code">
+    <meta property="article:tag" content="til">
+  <meta property="article:section" content="articles">
 </head>
 
 <body id="index" class="home">
@@ -17,7 +29,7 @@
     <div class="container">
       <nav class="navbar">
         <div class="navbar-brand">
-          <a class="navbar-item title is-3 is-active"
+          <a class="navbar-item title is-3"
              href="https://lab137.org/">Lab137</a>
         </div>
       </nav>
@@ -35,7 +47,7 @@
     </span>
     <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
-              <a class="navbar-item is-tab "
+              <a class="navbar-item is-tab is-active"
                  href="https://lab137.org/categories/articles/">articles</a>
         </div>
     </div>
@@ -45,11 +57,11 @@
 <div class="container">
   <div class="section columns">
     <div class="column is-three-quarters-desktop is-two-thirds-tablet">
-      <aside id="featured" class="body">
-        <article>
-          <h1 class="title">
-            <a href="https://lab137.org/articles/publishing-to-pypi/">Publishing to PyPI</a>
-          </h1>
+<section id="content" class="body">
+  <article>
+    <h1 class="title">
+      <a href="https://lab137.org/articles/publishing-to-pypi/" rel="bookmark"
+         title="Permalink to Publishing to PyPI">Publishing to PyPI</a></h1>
 <footer class="post-info">
   <abbr class="published" title="2023-06-07T11:54:00-07:00">
     Published <span class="is-info">Wed 07 June 2023</span>
@@ -73,8 +85,7 @@
       </span>
     </p>
   
-</footer>          <div class="section">
-              <p><em>NOTE: I don't do this very often so there could be a lot of incorrect information
+</footer>    <div class="section"><p><em>NOTE: I don't do this very often so there could be a lot of incorrect information
 in this post. I'm mainly writing this for myself for future reference. But, if
 someone else finds this useful then that makes me happy.</em></p>
 <p>Publishing to PyPI is an easy way to distribute your code to the masses. It can,
@@ -205,125 +216,14 @@ we use the value <code>pypi</code> for the <code>-r</code> flag</p>
 
 <p>If nothing went wrong your package should be live on PyPI. Have a question? Leave
 a comment (if I've re-enabled comments) or leave an issue or pull request on the
-site's <a href="//github.com/jay3ss/jay3ss.github.io">repo</a>.</p>
-          </div>
-        </article>
-      </aside>
-  <div class="is-hidden-print">
-    <h2 class="subtitle">Other articles</h2>
-    <div class="columns is-multiline">
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/viewing-array-contents-during-debugging-in-vs-code/">
-                <h3 class="title is-5">Viewing Array Contents During Debugging in VS Code</h3>
-                <div class="heading subtitle">Wed 20 May 2020</div>
-                <div><p>After getting annoyed with adding a bunch of array indices to the watch list for a program that I was...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/using-ssh-with-git-repositories/">
-                <h3 class="title is-5">Using SSH with Git Repositories</h3>
-                <div class="heading subtitle">Sat 02 May 2020</div>
-                <div><p>If you've setup your git account to use SSH, then should be pretty straightforward. My usual workflow was to...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/converting-a-powerpoint-ppt-to-a-pdf-file/">
-                <h3 class="title is-5">Converting a PowerPoint PPT to a PDF File</h3>
-                <div class="heading subtitle">Fri 01 May 2020</div>
-                <div><p>I'm currently taking an online class and the professor gives out PowerPoint slides as part of his lecture. I...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/how-to-print-on-the-same-line-with-python/">
-                <h3 class="title is-5">How to Print on the Same Line with Python</h3>
-                <div class="heading subtitle">Tue 17 December 2019</div>
-                <div><p>Today, I was downloading about 1,600 images and wanted to be able to keep track of how many images I had...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/simple-complex-number-algebra/">
-                <h3 class="title is-5">Simple Complex Number Algebra</h3>
-                <div class="heading subtitle">Fri 19 July 2019</div>
-                <div><p>I decided to start reviewing some of my controls courses from university to brush up on the fundamentals....<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/c-simple-structs-usage/">
-                <h3 class="title is-5">C++: Simple Structs Usage</h3>
-                <div class="heading subtitle">Wed 19 June 2019</div>
-                <div><p>Similar to arrays, structs allow you to hold a group of data. structs allow you to group together related...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/building-a-linked-stack-part-3/">
-                <h3 class="title is-5">Building a Linked Stack: Part 3</h3>
-                <div class="heading subtitle">Wed 12 June 2019</div>
-                <div><p>This is the third article in a multi-part series on the stack data structure. This series defines what a stack...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/building-a-linked-stack-part-2/">
-                <h3 class="title is-5">Building a Linked Stack: Part 2</h3>
-                <div class="heading subtitle">Wed 12 June 2019</div>
-                <div><p>This is the second article in a multi-part series on the stack data structure. This series defines what a...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="https://lab137.org/articles/building-a-linked-stack-part-1/">
-                <h3 class="title is-5">Building a Linked Stack: Part 1</h3>
-                <div class="heading subtitle">Wed 12 June 2019</div>
-                <div><p>This is the first article in a multi-part series on the stack data structure. This series defines what a stack...<br /></p></div>
-              </a>
-            </div>
-          </div>
-        </div>
-    </div>
-<nav class="pagination is-centered">
-    <a class="pagination-previous" href="#" disabled>
-      Previous
-    </a>
-    <a class="pagination-next" href="#" disabled>
-      Next page
-    </a>
-  <ul class="pagination-list">
-    <li>Page 1 / 1</li>
-  </ul>
-</nav>
-<br>  </div>
+site's <a href="//github.com/jay3ss/jay3ss.github.io">repo</a>.</p></div>
+
+  </article>
+</section>
+
+<script type="application/ld+json">
+  {"articleSection": "articles", "author": {"@type": "Person", "name": "Jay Ess"}, "datePublished": "2023-06-07T11:54:00-07:00", "headline": "Publishing to PyPI", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://lab137.org/articles/publishing-to-pypi/"}, "@context": "http://schema.org", "@type": "BlogPosting", "description": "NOTE: I don't do this very often so there could be a lot of incorrect information in this post. I'm mainly writing this for myself for future reference. But, if someone else finds this useful then that makes me happy. Publishing to PyPI is an easy way to distribute your \u2026"}
+</script>
     </div>
 
     <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-print">

@@ -6,9 +6,9 @@
   <title>Lab137 - complex conjugate</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="/theme/css/main.3dad1b7a.css">
+    <link rel="stylesheet" href="https://lab137.org/theme/webassets-external/46d881e6c501c98655e77a7722a6ac98_main.css">
   <style media="print">.is-hidden-print{display:none !important}</style>
-      <link rel="stylesheet" href="/css/custom.css">
+      <link rel="stylesheet" href="https://lab137.org/css/custom.css">
 </head>
 
 <body id="index" class="home">
@@ -18,7 +18,7 @@
       <nav class="navbar">
         <div class="navbar-brand">
           <a class="navbar-item title is-3"
-             href="/">Lab137</a>
+             href="https://lab137.org/">Lab137</a>
         </div>
       </nav>
     </div>
@@ -36,7 +36,7 @@
     <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
               <a class="navbar-item is-tab "
-                 href="/categories/articles/">articles</a>
+                 href="https://lab137.org/categories/articles/">articles</a>
         </div>
     </div>
   </div>
@@ -48,31 +48,31 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="/articles/simple-complex-number-algebra/">Simple Complex Number Algebra</a>
+            <a href="https://lab137.org/articles/simple-complex-number-algebra/">Simple Complex Number Algebra</a>
           </h1>
 <footer class="post-info">
   <abbr class="published" title="2019-07-19T16:00:00-07:00">
     Published <span class="is-info">Fri 19 July 2019</span>
-    in <a href="/categories/articles/">articles</a>
+    in <a href="https://lab137.org/categories/articles/">articles</a>
   </abbr>
 
     <p class="author">
-      <em>by           <a class="url fn" href="/author/jay-ess/">Jay Ess</a>
+      <em>by           <a class="url fn" href="https://lab137.org/author/jay-ess/">Jay Ess</a>
 </em>
       <span class="tag is-small is-rounded">
-        <a href="/tags/complex-numbers/">complex numbers</a>
+        <a href="https://lab137.org/tags/complex-numbers/">complex numbers</a>
       </span>
       <span class="tag is-small is-rounded">
-        <a href="/tags/math/">math</a>
+        <a href="https://lab137.org/tags/math/">math</a>
       </span>
       <span class="tag is-small is-rounded">
-        <a href="/tags/algebra/">algebra</a>
+        <a href="https://lab137.org/tags/algebra/">algebra</a>
       </span>
       <span class="tag is-small is-rounded">
-        <a href="/tags/complex-conjugate/">complex conjugate</a>
+        <a href="https://lab137.org/tags/complex-conjugate/">complex conjugate</a>
       </span>
       <span class="tag is-small is-rounded">
-        <a href="/tags/imaginary-numbers/">imaginary numbers</a>
+        <a href="https://lab137.org/tags/imaginary-numbers/">imaginary numbers</a>
       </span>
     </p>
   
@@ -96,7 +96,7 @@ in the 2-dimensional complex plane with the horizontal axis is called the
 "real" axis while the vertical axis is called the "imaginary" axis. The figure
 below shows this nicely.</p>
 <figure class="image">
-  <img src="/img/complex_number_rect.svg"
+  <img src="https://lab137.org/img/complex_number_rect.svg"
        class="img-responsive align-center"
        alt="A complex number"
        title="A complex number"
@@ -135,7 +135,7 @@ z = \|r\| e^{j\phi}.
 $$</div>
 <p>and is shown in the figure below.</p>
 <figure class="image">
-  <img src="/img/complex_number_polar_opt.svg"
+  <img src="https://lab137.org/img/complex_number_polar_opt.svg"
        alt="A complex number"
        title="A complex number"
        class="center responsive-image">
@@ -163,12 +163,15 @@ numbers is easier when both numbers are in rectangular form).</p>
 <h3>Converting From Polar to Rectangular Form</h3>
 <p>To convert from polar to rectangular form, we will use Euler's formula and
 multiply the result by the magnitude <span class="math">\(\|r\|\)</span>.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align}
-    z &amp;= \|r\|\left(\cos \phi + j \sin \phi \right) \nonumber \\
-      &amp;= a + jb \label{eq:polar_to_rect}
+    z &= \|r\|\left(\cos \phi + j \sin \phi \right) \nonumber \\
+      &= a + jb \label{eq:polar_to_rect}
 \end{align}
-$$</div>
+$$
+</div>
+
 <p><em>Interesting side note: Euler made discoveries in so many different
 fields that it started getting to the point that there were too many
 discoveries/theorems being named after him, so</em></p>
@@ -185,25 +188,31 @@ the conversion from polar to rectangular form actually works.</p>
 Here, the magnitude is <span class="math">\(\|r\| = 2 \sqrt{2}\)</span> and the phase angle is
 <span class="math">\(\phi = \frac{\pi}{4}\)</span>. Now, it's just a matter of plugging everything in to
 Equation <span class="math">\(\ref{eq:polar_to_rect}\)</span>.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    a + jb &amp;= \|r\| \left(\cos \phi + j \sin \phi \right) \\
-    &amp;= 2 \sqrt{2} \left(\cos \frac{\pi}{4} + j \sin \frac{\pi}{4} \right) \\
-    &amp;= 2 \sqrt{2} \left(\frac{\sqrt{2}}{2} + j \frac{\sqrt{2}}{2} \right) \\
-    &amp;= \boxed{2 + j2}
+    a + jb &= \|r\| \left(\cos \phi + j \sin \phi \right) \\
+    &= 2 \sqrt{2} \left(\cos \frac{\pi}{4} + j \sin \frac{\pi}{4} \right) \\
+    &= 2 \sqrt{2} \left(\frac{\sqrt{2}}{2} + j \frac{\sqrt{2}}{2} \right) \\
+    &= \boxed{2 + j2}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <h3>Converting from Rectangular to Polar Form</h3>
 <p>To convert from rectangular to polar form, we will need to find the magnitude
 and the phase angle of the complex number. To find the magnitude of <span class="math">\(z\)</span>, we
 will use the formula for the [Euclidean norm] (also known as the modulus, or
 norm)</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{equation}
     \|r\| = \sqrt{a^2 + b^2}.
     \label{eq:euclidean_norm}
 \end{equation}
-$$</div>
+$$
+</div>
+
 <p>Finding the phase angle can be a little bit tricky (which is what prompted me
 to write this article). Although you may be tempted to immediately use
 <span class="math">\(\phi = \tan^{-1}{\frac{b}{a}}\)</span>, you will quickly run into trouble. This
@@ -289,103 +298,139 @@ on the quadrant.</p>
 <h5>First Quadrant</h5>
 <p>Let's first do <span class="math">\(z = 3 + j3\)</span>. It's very simple to find the magnitude so let's do
 that first.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \|r\| &amp;= \sqrt{a^2 + b^2} \\
-          &amp;= \sqrt{3^2 + 3^2} \\
-          &amp;= \sqrt{18} \\
-          &amp;= \boxed{3 \sqrt{2}}
+    \|r\| &= \sqrt{a^2 + b^2} \\
+          &= \sqrt{3^2 + 3^2} \\
+          &= \sqrt{18} \\
+          &= \boxed{3 \sqrt{2}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>We can tell that this number is in the first quadrant because both of the real
 and imaginary components are positive. Therefore, according to the above
 <a href="#quadrants">table</a>, we will use <span class="math">\(\phi = \tan^{-1}{\frac{b}{a}}\)</span> to find the phase
 angle.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \phi &amp;= \tan^{-1}{\frac{b}{a}} \\
-         &amp;= \tan^{-1}{\frac{3}{3}} \\
-         &amp;= \boxed{\frac{\pi}{4}}
+    \phi &= \tan^{-1}{\frac{b}{a}} \\
+         &= \tan^{-1}{\frac{3}{3}} \\
+         &= \boxed{\frac{\pi}{4}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>Combining the magnitude and phase leaves us with the polar form</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \boxed{z = 3 \sqrt{2} \, e \, ^{j \frac{\pi}{4}}}
-$$</div>
+$$
+</div>
+
 <h5>Second Quadrant</h5>
 <p>Now, let's do <span class="math">\(z = -3 + j3\)</span>. Again, we're going to find the magnitude first.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \|r\| &amp;= \sqrt{\left(-3 \right)^2 + 3^2} \\
-          &amp;= \sqrt{18} \\
-          &amp;= \boxed{3 \sqrt{2}}
+    \|r\| &= \sqrt{\left(-3 \right)^2 + 3^2} \\
+          &= \sqrt{18} \\
+          &= \boxed{3 \sqrt{2}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>We can tell that this number is in the second quadrant because the real
 component is negative while the imaginary component is positive.
 Therefore, according to the above <a href="#quadrants">table</a>, we will use
 <span class="math">\(\phi = \pi - \tan^{-1}{\frac{b}{\left|a\right|}}\)</span> to find the phase angle.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \phi &amp;= \pi - \tan^{-1}{\frac{b}{\left|a\right|}} \\
-         &amp;= \pi - \tan^{-1}{\frac{3}{\left|-3\right|}} \\
-         &amp;= \pi - \frac{\pi}{4} \\
-         &amp;= \boxed{\frac{3\pi}{4}}
+    \phi &= \pi - \tan^{-1}{\frac{b}{\left|a\right|}} \\
+         &= \pi - \tan^{-1}{\frac{3}{\left|-3\right|}} \\
+         &= \pi - \frac{\pi}{4} \\
+         &= \boxed{\frac{3\pi}{4}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>Combining the magnitude and phase leaves us with the polar form</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \boxed{z = 3 \sqrt{2} \, e \, ^{j \frac{3\pi}{4}}}
-$$</div>
+$$
+</div>
+
 <h5>Third Quadrant</h5>
 <p>Now, let's do <span class="math">\(z = -3 - j3\)</span>. Again, we're going to find the magnitude first.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \|r\| &amp;= \sqrt{\left(-3 \right)^2 + \left(-3 \right)^2} \\
-          &amp;= \sqrt{18} \\
-          &amp;= \boxed{3 \sqrt{2}}
+    \|r\| &= \sqrt{\left(-3 \right)^2 + \left(-3 \right)^2} \\
+          &= \sqrt{18} \\
+          &= \boxed{3 \sqrt{2}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>We can tell that this number is in the third quadrant because both of the real
 and imaginary components are negative. Therefore, according to the above
 <a href="#quadrants">table</a>, we will use <span class="math">\(\phi = \pi + \tan^{-1}{\left|\frac{b}{a}\right|}\)</span>
 to find the phase angle.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \phi &amp;= \pi + \tan^{-1}{\left|\frac{b}{a}\right|} \\
-         &amp;= \pi + \tan^{-1}{\left|\frac{-3}{-3}\right|} \\
-         &amp;= \pi + \frac{\pi}{4} \\
-         &amp;= \boxed{\frac{5\pi}{4}}
+    \phi &= \pi + \tan^{-1}{\left|\frac{b}{a}\right|} \\
+         &= \pi + \tan^{-1}{\left|\frac{-3}{-3}\right|} \\
+         &= \pi + \frac{\pi}{4} \\
+         &= \boxed{\frac{5\pi}{4}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>Combining the magnitude and phase leaves us with the polar form</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \boxed{z = 3 \sqrt{2} \, e \, ^{j \frac{5\pi}{4}}}
-$$</div>
+$$
+</div>
+
 <h5>Fourth Quadrant</h5>
 <p>Now, let's do <span class="math">\(z = 3 - j3\)</span>. Again, we're going to find the magnitude first.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \|r\| &amp;= \sqrt{3^2 + \left(-3 \right)^2} \\
-          &amp;= \sqrt{18} \\
-          &amp;= \boxed{3 \sqrt{2}}
+    \|r\| &= \sqrt{3^2 + \left(-3 \right)^2} \\
+          &= \sqrt{18} \\
+          &= \boxed{3 \sqrt{2}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>We can tell that this number is in the fourth quadrant because real component
 is positive and the imaginary component is negative. Therefore, according to
 the above <a href="#quadrants">table</a>, we will use
 <span class="math">\(\phi = -\tan^{-1}{\frac{\left|b\right|}{a}}\)</span> to find the phase angle.</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    \phi &amp;= -\tan^{-1}{\frac{\left|b\right|}{a}} \\
-         &amp;= -\tan^{-1}{\frac{\left|-3\right|}{-3}} \\
-         &amp;= \boxed{-\frac{\pi}{4}}
+    \phi &= -\tan^{-1}{\frac{\left|b\right|}{a}} \\
+         &= -\tan^{-1}{\frac{\left|-3\right|}{-3}} \\
+         &= \boxed{-\frac{\pi}{4}}
 \end{align*}
-$$</div>
+$$
+</div>
+
 <p>Combining the magnitude and phase leaves us with the polar form</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \boxed{z = 3 \sqrt{2} \, e \, ^{-j \frac{\pi}{4}}}
-$$</div>
+$$
+</div>
+
 <h2>Arithmetic Operations</h2>
 <p>Now that we know how to convert from one form to another, we can perform
 arithmetic operations with complex numbers.</p>
@@ -396,14 +441,17 @@ rectangular form if necessary. Then, you simply add the components together.</p>
 <p>For example, suppose that you have two complex numbers <span class="math">\(z_1 = a_1 + jb_1\)</span> and
 <span class="math">\(z_2 = a_2 + jb_2\)</span>. To get the new number <span class="math">\(z_3 = z_1 + z_2\)</span>, you would do the
 following</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    z_3 &amp;= z_1 + z_2 \\
-        &amp;= \left(a_1 + jb_1 \right) + \left(a_2 + jb_2 \right) \\
-        &amp;= \left(a_1 + a_2 \right) + j\left(b_1 + b_2 \right) \\
-        &amp;= a_3 + jb_3.
+    z_3 &= z_1 + z_2 \\
+        &= \left(a_1 + jb_1 \right) + \left(a_2 + jb_2 \right) \\
+        &= \left(a_1 + a_2 \right) + j\left(b_1 + b_2 \right) \\
+        &= a_3 + jb_3.
 \end{align*}
-$$</div>
+$$
+</div>
+
 <h3>Subtraction</h3>
 <p>Subtraction works similarly to addition (just like with real numbers). First,
 we should make sure that all complex numbers are in rectangular form. Then, we
@@ -411,14 +459,17 @@ can simply subtract the components of each complex number.</p>
 <p>For example, suppose that you have two complex numbers <span class="math">\(z_1 = a_1 + jb_1\)</span> and
 <span class="math">\(z_2 = a_2 + jb_2\)</span>. To get the new number <span class="math">\(z_3 = z_1 + z_2\)</span> you would do the
 following</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align*}
-    z_3 &amp;= z_1 - z_2 \\
-        &amp;= \left(a_1 + jb_1 \right) - \left(a_2 + jb_2 \right) \\
-        &amp;= \left(a_1 - a_2 \right) + j\left(b_1 - b_2 \right) \\
-        &amp;= a_3 + jb_3.
+    z_3 &= z_1 - z_2 \\
+        &= \left(a_1 + jb_1 \right) - \left(a_2 + jb_2 \right) \\
+        &= \left(a_1 - a_2 \right) + j\left(b_1 - b_2 \right) \\
+        &= a_3 + jb_3.
 \end{align*}
-$$</div>
+$$
+</div>
+
 <h3>Multiplication</h3>
 <p>In contrast to addition and subtraction, multiplication of complex numbers is
 more easily performed when all complex numbers are in <em>polar</em> form.</p>
@@ -428,13 +479,16 @@ add the phase angles.</p>
 <p>For example, suppose that we have two complex numbers <span class="math">\(z_1 = r_1 \, e^{j \phi_1}\)</span>
 and <span class="math">\(z_2 = r_2 \, e^{j \phi_2}\)</span> and we want to multiply them. To multiply
 them, you would do the following</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align}
-    z_3 &amp;= z_1 \cdot z_2 \\
-        &amp;= \left(r_1 \, e^{j \phi_1} \right) \cdot \left(r_2 \, e^{j \phi_2} \right) \\
-        &amp;= \left(r_1 \cdot r_2 \right) \, e^{\left(\phi_1 + \phi_2 \right)}.
+    z_3 &= z_1 \cdot z_2 \\
+        &= \left(r_1 \, e^{j \phi_1} \right) \cdot \left(r_2 \, e^{j \phi_2} \right) \\
+        &= \left(r_1 \cdot r_2 \right) \, e^{\left(\phi_1 + \phi_2 \right)}.
 \end{align}
-$$</div>
+$$
+</div>
+
 <h3>Division</h3>
 <p>Like multiplication, division of complex numbers is easiest when all of the
 complex numbers are in polar form. So, first convert all of the complex numbers
@@ -442,13 +496,16 @@ to polar form, then divide the magnitudes and <em>subtract</em> the phase angles
 <p>For example, suppose that we have two complex numbers <span class="math">\(z_1 = r_1 \, e^{j \phi_1}\)</span>
 and <span class="math">\(z_2 = r_2 \, e^{j \phi_2}\)</span> and we want to multiply them. To multiply
 them, you would do the following</p>
-<div class="math">$$
+<div class="math-block">
+$$
 \begin{align}
-    z_3 &amp;= \frac{z_1}{z_2} \\
-        &amp;= \frac{r_1 \, e^{j \phi_1}}{r_2 \, e^{j \phi_2}} \\
-        &amp;= \frac{r_1}{r_2} \, e^{\left(\phi_1 - \phi_2 \right)}.
+    z_3 &= \frac{z_1}{z_2} \\
+        &= \frac{r_1 \, e^{j \phi_1}}{r_2 \, e^{j \phi_2}} \\
+        &= \frac{r_1}{r_2} \, e^{\left(\phi_1 - \phi_2 \right)}.
 \end{align}
-$$</div>
+$$
+</div>
+
 <h2>Complex Conjugate</h2>
 <p>Every complex number has a complex conjugate and that conjugate is found by
 switching the signs of the imaginary component. For example, if we have a
@@ -542,11 +599,11 @@ please comment below.</p>
       <aside class="menu">
           <p class="menu-label">Other Pages</p>
           <ul class="menu-list">
-                <li><a                        href="/pages/about/">
+                <li><a                        href="https://lab137.org/pages/about/">
                   <span class="icon is-small"><i class="fa fa-book"></i></span>
                   <span class="link-text">About</span>
                 </a></li>
-                <li><a                        href="/pages/privacy-policy/">
+                <li><a                        href="https://lab137.org/pages/privacy-policy/">
                   <span class="icon is-small"><i class="fa fa-book"></i></span>
                   <span class="link-text">Privacy Policy</span>
                 </a></li>
@@ -566,6 +623,11 @@ please comment below.</p>
       <span class="link-text">GitHub</span>
     </a></li>
 
+    <li><a href="https://lab137.org/feeds/all.atom.xml"
+           type="application/atom+xml" rel="alternate">
+      <span class="icon is-small"><i class="fa fa-rss"></i></span>
+      <span class="link-text">Atom Feed</span>
+    </a></li>
 
 </ul>          <p class="menu-label">License</p>
           

@@ -3,12 +3,12 @@
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width">
-  <title>Lab137 - python</title>
+  <title>Lab137 - Python</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="/theme/css/main.3dad1b7a.css">
+    <link rel="stylesheet" href="https://lab137.org/theme/webassets-external/46d881e6c501c98655e77a7722a6ac98_main.css">
   <style media="print">.is-hidden-print{display:none !important}</style>
-      <link rel="stylesheet" href="/css/custom.css">
+      <link rel="stylesheet" href="https://lab137.org/css/custom.css">
 </head>
 
 <body id="index" class="home">
@@ -18,7 +18,7 @@
       <nav class="navbar">
         <div class="navbar-brand">
           <a class="navbar-item title is-3"
-             href="/">Lab137</a>
+             href="https://lab137.org/">Lab137</a>
         </div>
       </nav>
     </div>
@@ -36,7 +36,7 @@
     <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
               <a class="navbar-item is-tab "
-                 href="/categories/articles/">articles</a>
+                 href="https://lab137.org/categories/articles/">articles</a>
         </div>
     </div>
   </div>
@@ -48,138 +48,164 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="/articles/how-to-print-on-the-same-line-with-python/">How to Print on the Same Line with Python</a>
+            <a href="https://lab137.org/articles/publishing-to-pypi/">Publishing to PyPI</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2019-12-17T16:00:00-08:00">
-    Published <span class="is-info">Tue 17 December 2019</span>
-    in <a href="/categories/articles/">articles</a>
+  <abbr class="published" title="2023-06-07T11:54:00-07:00">
+    Published <span class="is-info">Wed 07 June 2023</span>
+    in <a href="https://lab137.org/categories/articles/">articles</a>
   </abbr>
-    <br />
-    <abbr class="modified" title="2020-05-01T15:51:00-07:00">
-      Updated Fri 01 May 2020
-    </abbr>
 
     <p class="author">
-      <em>by           <a class="url fn" href="/author/jay-ess/">Jay Ess</a>
+      <em>by           <a class="url fn" href="https://lab137.org/author/jay-ess/">Jay Ess</a>
 </em>
       <span class="tag is-small is-rounded">
-        <a href="/tags/python/">python</a>
+        <a href="https://lab137.org/tags/python/">Python</a>
       </span>
       <span class="tag is-small is-rounded">
-        <a href="/tags/print/">print</a>
+        <a href="https://lab137.org/tags/publishing/">publishing</a>
+      </span>
+      <span class="tag is-small is-rounded">
+        <a href="https://lab137.org/tags/code/">code</a>
+      </span>
+      <span class="tag is-small is-rounded">
+        <a href="https://lab137.org/tags/til/">til</a>
       </span>
     </p>
   
 </footer>          <div class="section">
-              <p>Today, I was downloading about 1,600 images and wanted to be able to keep track
-of how many images I had downloaded so far and what image that I was currently
-downloading. This is typically very easy with Python, but I decided to print
-everything on the same line so that I my terminal wouldn't get cluttered with
-<code>print</code> statements. This is where I encountered my issue.</p>
-<p>The format of the string that I was printing started out as</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Image</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+              <p><em>NOTE: I don't do this very often so there could be a lot of incorrect information
+in this post. I'm mainly writing this for myself for future reference. But, if
+someone else finds this useful then that makes me happy.</em></p>
+<p>Publishing to PyPI is an easy way to distribute your code to the masses. It can,
+however, be a little tricky to get your package uploaded. Here's how I just did
+it with my package <a href="//pypi.org/project/pyautoreloadserver/">PyAutoReloadServer</a>.</p>
+<h2>Setting Up Your Project</h2>
+<p>However you structure your project, you'll need something to tell PyPI what's
+in your package and how to set the package up. I created a <code>setup.py</code> file for
+that:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># setup.py</span>
+
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+
+<span class="n">here</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+<span class="n">readme</span> <span class="o">=</span> <span class="p">(</span><span class="n">here</span> <span class="o">/</span> <span class="s2">&quot;README.md&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+
+<span class="n">extras_require</span> <span class="o">=</span> <span class="p">(</span><span class="n">here</span> <span class="o">/</span> <span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;pyautoreloadserver&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;0.0.1&quot;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Jay Ess&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A simple HTTP server that reloads when a file change is detected&quot;</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/jay3ss/pyautoreloadserver&quot;</span><span class="p">,</span>
+    <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span><span class="p">,</span>
+    <span class="n">long_description_content_type</span><span class="o">=</span><span class="s2">&quot;text/markdown&quot;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>
+    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Development Status :: 5 - Production/Stable&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Intended Audience :: Developers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Programming Language :: Python :: 3.11&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">extras_require</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;dev&quot;</span><span class="p">:</span> <span class="n">extras_require</span><span class="p">},</span>
+    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;console_scripts&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pyautoreloadserver = pyautoreloadserver.cli:main&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">package_dir</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;tests&quot;</span><span class="p">:</span> <span class="s2">&quot;tests&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pyautoreloadserver&quot;</span><span class="p">:</span> <span class="s2">&quot;pyautoreloadserver&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
 </code></pre></div>
 
-<p>where</p>
+<p>You can read all about what to put in your own <code>setup.py</code> file
+<a href="//docs.python.org/3/distutils/setupscript.html">here</a>. I like to use code to
+keep things like the <code>long_description</code> and <code>extras_require</code> attributes up-to-date
+automatically. But, you do you.</p>
+<p>Now, make an account on <a href="//pypi.org">PyPI's website</a> and then get an
+<a href="https://pypi.org/help#apitoken">API key</a> that you'll use to upload your package.
+I made a <code>~/.pypirc</code> file to hold all of the information that I'll need to upload
+my packages. Here's what it looks like (with some info redacted):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ~/.pypirc</span>
+
+<span class="o">[</span>distutils<span class="o">]</span>
+index-servers<span class="w"> </span><span class="o">=</span>
+<span class="w">    </span>pypi
+<span class="w">    </span>pypitest
+
+<span class="o">[</span>pypitest<span class="o">]</span>
+<span class="nv">repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>https://test.pypi.org/legacy/
+<span class="nv">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>__token__
+<span class="nv">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;api-key&gt;
+
+<span class="o">[</span>pypi<span class="o">]</span>
+<span class="nv">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>__token__
+<span class="nv">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;api-key&gt;
+</code></pre></div>
+
+<p>There's couple of things going on in the file above and you should checkout the
+<a href="//packaging.python.org/en/latest/specifications/pypirc/">docs</a> for it. But, in
+the meantime here's some of the important bits from the docs</p>
+<blockquote>
+<p>The <code>distutils</code> section defines an <code>index-servers</code> field that lists the name of
+all sections describing a repository.</p>
+<p>Each section describing a repository defines three fields:</p>
 <ul>
-<li><code>\r</code>: is the carriage return which resets the line position to the beginning
-of the line</li>
-<li><code>count</code>: the number of the image that I was downloading</li>
-<li><code>end</code>: the character that <code>print</code> will append to the string that it's printing</li>
-<li><code>flush</code>: tells <code>print</code> whether or not it should forcibly flush the stream</li>
+<li><code>repository</code>: The URL of the repository.</li>
+<li><code>username</code>: The registered username on the repository.</li>
+<li><code>password</code>: The password that will used to authenticate the username.</li>
 </ul>
-<p>Basically, what's going to happen is that when the string is printed it will
-print the string and put the cursor back at the beginning of the line. If this
-where done in a loop (probably using <code>time.sleep</code> too), then you'd get the
-effect of the one line counting up. Neat!</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+</blockquote>
+<p>The <code>[distutils]</code>'s <code>index-servers</code> field is where you define additional
+repositories. Note that my <code>~/.pypirc</code> file doesn't have a <code>repository</code> field
+for the <code>pypi</code> section. That's because the default value for that field for the
+<code>[pypi]</code> section is <code>https://upload.pypi.org/legacy</code>. Also, if you're using an
+API token like I am then for the <code>username</code> field you literally put <code>__token__</code>
+as the value. It took me an embarrassingly long time to figure that one out.</p>
+<h2>Building the Package for Distribution</h2>
+<p>There are a multiple ways to build a Python package for distribution. The two
+that I come across the most are directly using a <code>setup.py</code> script (which is
+<a href="//blog.ganssle.io/articles/2021/10/setup-py-deprecated.html">strongly discouraged</a>
+and deprecated) or using the <a href="//pypi.org/project/build/"><code>build</code></a> package. I'm
+going to use the <code>build</code> package.</p>
+<p>I was having trouble using <code>build</code> the command <code>python -m build</code> and had to
+modify it slightly</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>build<span class="w"> </span>--no-isolation<span class="w"> </span>--wheel
 
-<span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Count</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="c1"># this can be simplified by using -n and -w, respectively</span>
 </code></pre></div>
 
-<p>We can put this into a function to make it a little easier to read</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">print_same_line</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<p>which seemed to work. The <code>--no-isolation</code> flag prevents <code>build</code> from using an
+isolated virtual environment (and makes the build time shorter) and the <code>--wheel</code>
+flags tells <code>build</code> to create a wheel and a <code>build/</code> and <code>dist/</code> directory.</p>
+<h2>Publishing the Package</h2>
+<p>Next, use <a href="//twine.readthedocs.io/en/stable/"><code>twine</code></a> to publish the package.
+Twine is the official PyPI upload tool so it should work for you. You'll first
+want to test publishing your package to ensure that everything goes right. Using
+<code>twine</code> it's pretty easy to test uploading.</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </span>pypitest<span class="w"> </span>dist/*<span class="w"> </span>--verbose
 </code></pre></div>
 
-<p>In the function above, we need to use the <code>sep</code> keyword so that when we use
-this function a space isn't added between the <code>\r</code> character and our string
-causing an offset. Now we can use a loop like above and have our code be a bit
-more readable (we also don't need the <code>\r</code> character at the beginning of our
-string).</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
-
-<span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">print_same_line</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Count</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<p>The <code>-r</code> flag tells <code>twine</code> which repository we want to upload to (<code>pypitest</code>
+here) and then <code>dist/*</code> is the location of the wheel. The <code>--verbose</code> flag gives
+us more output from <code>twine</code> so if there's a problem we can have a better idea
+what it is.</p>
+<p>If everything went well go ahead and move on to uploading to PyPI. The command
+for that is exactly the same as loading to the test PyPI repository, but instead
+we use the value <code>pypi</code> for the <code>-r</code> flag</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>twine<span class="w"> </span>upload<span class="w"> </span>-r<span class="w"> </span>pypi<span class="w"> </span>dist/*<span class="w"> </span>--verbose
 </code></pre></div>
 
-<p>This worked pretty great, but I encountered trouble when I was reading URLs
-from a file and was printing them to the terminal.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="nn">request</span>
-
-<span class="n">path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
-<span class="n">SLEEP</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># seconds</span>
-<span class="n">urls_file</span> <span class="o">=</span> <span class="s1">&#39;images.txt&#39;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">urls_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">urls</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;Image&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">url</span><span class="o">.</span><span class="n">strip</span><span class="p">()])</span>
-        <span class="n">print_same_line</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-
-        <span class="n">fname</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="o">/</span><span class="n">fname</span><span class="p">)</span>
-
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">SLEEP</span><span class="p">)</span>
-
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Downloaded </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> images&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>which resulted in the unexpected output of</p>
-<div class="highlight"><pre><span></span><code>Image<span class="w">   </span><span class="m">1</span><span class="w">   </span>https://example.com/image-1.jpg
-Image<span class="w">   </span><span class="m">2</span><span class="w">   </span>https://example.com/image-2.jpg
-Image<span class="w">   </span><span class="m">3</span><span class="w">   </span>https://example.com/image-3.jpg
-Image<span class="w">   </span><span class="m">4</span><span class="w">   </span>https://example.com/image-4.jpg
-Image<span class="w">   </span><span class="m">5</span><span class="w">   </span>https://example.com/image-5.jpg
-Image<span class="w">   </span><span class="m">6</span><span class="w">   </span>https://example.com/image-6.jpg
-...
-</code></pre></div>
-
-<p>It took me longer than I'd like to admit to figure out what went wrong. If you
-look at the line where I grab the file name (<code>fname</code>) from the URL, you'll see
-that I call the <code>strip</code> method. Why? Each line of the file had a <code>\n</code> character
-at the end of it. Even though I did it for the file name I <strong>did not</strong> do it
-for the printing of the URL. This one little mistake cost me probably 90 to 120
-minutes...</p>
-<p>Once I fixed it, however, it worked like a charm. Below is the fixed example</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="nn">request</span>
-
-
-<span class="n">path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
-<span class="n">SLEEP</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># seconds</span>
-<span class="n">urls_file</span> <span class="o">=</span> <span class="s1">&#39;images.txt&#39;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">urls_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">urls</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">print_same_line</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Image</span><span class="se">\t</span><span class="si">{</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-        <span class="n">fname</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="o">/</span><span class="n">fname</span><span class="p">)</span>
-
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">SLEEP</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Done! Downloaded </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1"> images&#39;</span><span class="p">)</span>
-</code></pre></div>
+<p>If nothing went wrong your package should be live on PyPI. Have a question? Leave
+a comment (if I've re-enabled comments) or leave an issue or pull request on the
+site's <a href="//github.com/jay3ss/jay3ss.github.io">repo</a>.</p>
           </div>
         </article>
       </aside>
@@ -189,7 +215,18 @@ minutes...</p>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
-              <a href="/articles/building-a-linked-stack-part-3/">
+              <a href="https://lab137.org/articles/how-to-print-on-the-same-line-with-python/">
+                <h3 class="title is-5">How to Print on the Same Line with Python</h3>
+                <div class="heading subtitle">Tue 17 December 2019</div>
+                <div><p>Today, I was downloading about 1,600 images and wanted to be able to keep track of how many images I had...<br /></p></div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="card is-fullwidth is-fullheight">
+            <div class="card-content">
+              <a href="https://lab137.org/articles/building-a-linked-stack-part-3/">
                 <h3 class="title is-5">Building a Linked Stack: Part 3</h3>
                 <div class="heading subtitle">Wed 12 June 2019</div>
                 <div><p>This is the third article in a multi-part series on the stack data structure. This series defines what a stack...<br /></p></div>
@@ -200,7 +237,7 @@ minutes...</p>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
-              <a href="/articles/building-a-linked-stack-part-2/">
+              <a href="https://lab137.org/articles/building-a-linked-stack-part-2/">
                 <h3 class="title is-5">Building a Linked Stack: Part 2</h3>
                 <div class="heading subtitle">Wed 12 June 2019</div>
                 <div><p>This is the second article in a multi-part series on the stack data structure. This series defines what a...<br /></p></div>
@@ -211,7 +248,7 @@ minutes...</p>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
-              <a href="/articles/building-a-linked-stack-part-1/">
+              <a href="https://lab137.org/articles/building-a-linked-stack-part-1/">
                 <h3 class="title is-5">Building a Linked Stack: Part 1</h3>
                 <div class="heading subtitle">Wed 12 June 2019</div>
                 <div><p>This is the first article in a multi-part series on the stack data structure. This series defines what a stack...<br /></p></div>
@@ -238,11 +275,11 @@ minutes...</p>
       <aside class="menu">
           <p class="menu-label">Other Pages</p>
           <ul class="menu-list">
-                <li><a                        href="/pages/about/">
+                <li><a                        href="https://lab137.org/pages/about/">
                   <span class="icon is-small"><i class="fa fa-book"></i></span>
                   <span class="link-text">About</span>
                 </a></li>
-                <li><a                        href="/pages/privacy-policy/">
+                <li><a                        href="https://lab137.org/pages/privacy-policy/">
                   <span class="icon is-small"><i class="fa fa-book"></i></span>
                   <span class="link-text">Privacy Policy</span>
                 </a></li>
@@ -262,6 +299,11 @@ minutes...</p>
       <span class="link-text">GitHub</span>
     </a></li>
 
+    <li><a href="https://lab137.org/feeds/all.atom.xml"
+           type="application/atom+xml" rel="alternate">
+      <span class="icon is-small"><i class="fa fa-rss"></i></span>
+      <span class="link-text">Atom Feed</span>
+    </a></li>
 
 </ul>          <p class="menu-label">License</p>
           
